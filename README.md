@@ -1,32 +1,25 @@
 # EEG-AI-EXPERIMENTS
 
-Эксперимент Neuro-SE: участник видит код, называет номера строк с багами, оператор управляет сессией из отдельного окна. Стимул, время реакций и метки LSL идут через PsychoPy. ЭЭГ и айтрекер подключаются теми же блоками старта и остановки, что и на стенде: BrainVision RDA и EyeLink.
+Эксперимент Neuro-SE на дисплейном ПК стенда (Windows). Участник видит код и называет номера строк с багами. Оператор сидит в отдельном окне браузера. Стимул, время реакций и метки LSL идут через PsychoPy. ЭЭГ читается по BrainVision RDA, взгляд — через EyeLink.
 
-Рабочая папка — `neuro_se_experiment`. Все команды ниже выполняются из неё.
+Рабочая папка — `neuro_se_experiment`. Команды ниже выполняются из неё, в командной строке или PowerShell.
 
-## Что нужно
+## Что поставить
 
-- Python **3.12**. На 3.13 PsychoPy не ставится.
-- Для живого айтрекера — SR Research EyeLink Developers Kit. Библиотеки `pylink` нет в pip.
-- Сеть стенда: усилитель `100.1.1.3:51244` (RDA, 32-bit), трекер `100.1.1.1`.
+1. [Git for Windows](https://git-scm.com/download/win).
+2. Python **3.12** с [python.org](https://www.python.org/downloads/). В установщике отметьте **Add python.exe to PATH**. Версия 3.13 не подойдёт: для неё нет PsychoPy.
+3. Для живого айтрекера — SR Research EyeLink Developers Kit. Пакета `pylink` в pip нет.
+4. Сеть стенда уже такая: усилитель `100.1.1.3`, порт `51244` (RDA, 32-bit), трекер `100.1.1.1`.
 
-## macOS
+Проверка интерпретатора:
 
-```bash
-brew install python@3.12
-git clone https://github.com/Fllarpell/EEG-AI-EXPERIMENTS.git
-cd EEG-AI-EXPERIMENTS/neuro_se_experiment
-/opt/homebrew/bin/python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -U pip
-pip install -r requirements.txt
+```bat
+py -3.12 --version
 ```
 
-Если `python --version` показывает 3.13, это другой интерпретатор. Окружение уже собрано командой выше, дальше вызывайте `.venv/bin/python`.
+Должно быть `Python 3.12.x`.
 
-## Windows
-
-Поставьте Python 3.12 с [python.org](https://www.python.org/downloads/) и отметьте Add python.exe to PATH.
+## Окружение
 
 ```bat
 git clone https://github.com/Fllarpell/EEG-AI-EXPERIMENTS.git
@@ -37,52 +30,57 @@ python -m pip install -U pip
 pip install -r requirements.txt
 ```
 
-На дисплейном ПК EyeLink поставьте Developers Kit и добейтесь, чтобы `python -c "import pylink"` в этом же `.venv` проходил. Если набор поставил `pylink` в другой Python, этот пакет нужно сделать доступным именно активированному 3.12.
+В начале строки появится `(.venv)`. Дальше все команды идут уже из этого окружения.
+
+Живой трекер, после установки Developers Kit:
+
+```bat
+python -c "import pylink"
+```
+
+Команда должна молча завершиться. Если `pylink` встал в другой Python, его нужно поставить в этот `.venv`, а не в системный интерпретатор.
+
+Если Windows спросит про брандмауэр для Python, разрешите сеть. Иначе LabRecorder не увидит LSL, а RDA не откроет усилитель.
 
 ## Запуск
 
 Пульт оператора:
 
-```bash
-# macOS / Linux, из neuro_se_experiment
-.venv/bin/streamlit run operator_app.py --server.port 8765
-```
-
 ```bat
 .venv\Scripts\streamlit run operator_app.py --server.port 8765
 ```
 
-Откройте http://localhost:8765. Страница «Сессия» выбирает стиль строк, полный экран и заглушки, затем открывает окно заданий. Страница «Задания» правит код и фото: файл перечитывается во время идущей пробы.
+Браузер: http://localhost:8765
 
-Проверка без приборов, прямо из консоли:
+Страница «Сессия» задаёт стиль строк, полный экран и заглушки, затем открывает окно заданий. Страница «Задания» правит код и фото, пока проба ещё на экране.
 
-```bash
-.venv/bin/python main.py
+Проверка без приборов:
+
+```bat
+.venv\Scripts\python main.py
 ```
 
-Живые ЭЭГ и айтрекер:
+Живые ЭЭГ и айтрекер — те же галочки на странице сессии или сразу:
 
-```bash
-.venv/bin/python main.py --no-dummy-eeg --no-dummy-gaze
+```bat
+.venv\Scripts\python main.py --no-dummy-eeg --no-dummy-gaze
 ```
 
-Те же флаги есть на странице сессии. Пока заглушки включены, калибровки нет и вместо приборов пишутся синтетические потоки.
+Пока заглушки включены, калибровки нет. С выключенной заглушкой айтрекера сначала открываются экраны камеры и калибровки. `C` калибрует, `V` проверяет, Escape закрывает это меню. Окно заданий появляется после выхода. Пробел начинает запись. Сессию останавливает кнопка на странице оператора.
 
-С выключенной заглушкой айтрекера сначала открываются экраны камеры и калибровки EyeLink. `C` — калибровка, `V` — проверка, Escape закрывает это меню. Окно заданий появляется после выхода из меню. Пробел начинает запись. Останавливает сессию кнопка на странице оператора.
+Только усилитель, файлы лягут в текущую папку:
 
-Только усилитель, в текущую папку:
-
-```bash
-.venv/bin/python hardware/rda_client.py
+```bat
+.venv\Scripts\python hardware\rda_client.py
 ```
 
 ## Куда пишется сессия
 
-Каталог `data/` в git не входит.
+Папка `data\` в git не входит.
 
-- `data/experiment.log` — соединение, каналы, маркеры усилителя, калибровка, каждое задание, каждое нажатие.
-- `data/trials.csv` — ответы.
-- `data/hardware/<сессия>/eeg/` — `datablocks.csv`, `properties.json`, `markers.csv`.
-- `data/hardware/<сессия>/gaze/` — для заглушки `gaze.csv`, для EyeLink короткий `.edf`.
+- `data\experiment.log` — соединение, каналы, маркеры усилителя, калибровка, каждое задание, каждое нажатие.
+- `data\trials.csv` — ответы.
+- `data\hardware\<сессия>\eeg\` — `datablocks.csv`, `properties.json`, `markers.csv`.
+- `data\hardware\<сессия>\gaze\` — у заглушки `gaze.csv`, у EyeLink короткий `.edf`.
 
-Потоки LSL: `NeuroSE_Markers`, а у заглушек ещё `NeuroSE_EEG` и `NeuroSE_Gaze`. Живой трекер отдаёт файл EDF.
+Потоки LSL: `NeuroSE_Markers`. У заглушек ещё `NeuroSE_EEG` и `NeuroSE_Gaze`. Живой трекер отдаёт файл EDF.
