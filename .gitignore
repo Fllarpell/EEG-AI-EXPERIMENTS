@@ -4,7 +4,6 @@ __pycache__/
 venv/
 env/
 .DS_Store
-neuro_se_experiment/data/*
-!neuro_se_experiment/data/.gitkeep
 *.log
+!neuro_se_experiment/data/*.log
 EEG-Experiment-Script/

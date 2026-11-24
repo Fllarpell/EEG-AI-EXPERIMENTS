@@ -1,0 +1,882 @@
+2026-11-24 14:28:53.951 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 14:28:53.951 | INFO | neuro_se | Session 20261124_142853 starting.
+2026-11-24 14:28:53.952 | INFO | neuro_se | EEG: заглушка -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_142853\eeg
+2026-11-24 14:28:53.953 | INFO | neuro_se | Gaze: заглушка -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_142853\gaze
+2026-11-24 14:28:53.953 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 14:28:53.953 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 14:28:53.964 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 14:28:53.966 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 14:28:53.967 | INFO | neuro_se.gaze | [GAZE-DUMMY] calibration skipped
+2026-11-24 14:29:14.170 | INFO | neuro_se.ui | Window ready ((1280, 740), fullscreen=False).
+2026-11-24 14:30:26.889 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 14:30:26.889 | INFO | neuro_se | Session 20261124_143026 starting.
+2026-11-24 14:30:26.889 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_143026\eeg
+2026-11-24 14:30:26.889 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_143026\gaze
+2026-11-24 14:30:26.889 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 14:30:26.890 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 14:30:26.891 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 14:30:26.891 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 14:30:26.892 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 14:30:26.892 | ERROR | neuro_se | Experiment failed.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 265, in prepare
+    import pylink
+ModuleNotFoundError: No module named 'pylink'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\main.py", line 52, in main
+    runner.run()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 57, in run
+    self._run_session()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 122, in _run_session
+    self._gaze.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 267, in prepare
+    raise ImportError(
+ImportError: Живой айтрекер включён, а библиотеки pylink нет. Нужен SR Research EyeLink Developers Kit, либо оставьте заглушку айтрекера.
+2026-11-24 14:30:41.146 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 14:30:41.146 | INFO | neuro_se | Session 20261124_143041 starting.
+2026-11-24 14:30:41.146 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_143041\eeg
+2026-11-24 14:30:41.146 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_143041\gaze
+2026-11-24 14:30:41.146 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 14:30:41.146 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 14:30:41.147 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 14:30:41.147 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 14:30:41.148 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 14:30:41.148 | ERROR | neuro_se | Experiment failed.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 265, in prepare
+    import pylink
+ModuleNotFoundError: No module named 'pylink'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\main.py", line 52, in main
+    runner.run()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 57, in run
+    self._run_session()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 122, in _run_session
+    self._gaze.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 267, in prepare
+    raise ImportError(
+ImportError: Живой айтрекер включён, а библиотеки pylink нет. Нужен SR Research EyeLink Developers Kit, либо оставьте заглушку айтрекера.
+2026-11-24 14:31:00.313 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 14:31:00.313 | INFO | neuro_se | Session 20261124_143100 starting.
+2026-11-24 14:31:00.313 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_143100\eeg
+2026-11-24 14:31:00.313 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_143100\gaze
+2026-11-24 14:31:00.313 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 14:31:00.313 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 14:31:00.314 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 14:31:00.314 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 14:31:00.315 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 14:31:00.315 | ERROR | neuro_se | Experiment failed.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 265, in prepare
+    import pylink
+ModuleNotFoundError: No module named 'pylink'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\main.py", line 52, in main
+    runner.run()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 57, in run
+    self._run_session()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 122, in _run_session
+    self._gaze.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 267, in prepare
+    raise ImportError(
+ImportError: Живой айтрекер включён, а библиотеки pylink нет. Нужен SR Research EyeLink Developers Kit, либо оставьте заглушку айтрекера.
+2026-11-24 15:05:49.273 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 15:05:49.274 | INFO | neuro_se | BEGIN session id=20261124_150549 eeg=live gaze=live log=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log hardware=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_150549
+2026-11-24 15:05:49.274 | INFO | neuro_se | Session 20261124_150549 starting.
+2026-11-24 15:05:49.274 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_150549\eeg
+2026-11-24 15:05:49.274 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_150549\gaze
+2026-11-24 15:05:49.274 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 15:05:49.274 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 15:05:49.275 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 15:05:49.275 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 15:05:49.275 | INFO | neuro_se | BEGIN eeg-setup
+2026-11-24 15:05:49.331 | INFO | neuro_se.eeg | [EEG-RDA] connecting 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_150549\eeg
+2026-11-24 15:05:49.332 | INFO | neuro_se.eeg | [EEG-RDA] socket 100.1.1.3:51244
+2026-11-24 15:05:49.365 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 15:05:49.366 | INFO | neuro_se | BEGIN session id=20261124_150549 eeg=live gaze=live log=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log hardware=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_150549
+2026-11-24 15:05:49.366 | INFO | neuro_se | Session 20261124_150549 starting.
+2026-11-24 15:05:49.366 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_150549\eeg
+2026-11-24 15:05:49.366 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_150549\gaze
+2026-11-24 15:05:49.366 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 15:05:49.366 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 15:05:49.367 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 15:05:49.367 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 15:05:49.367 | INFO | neuro_se | BEGIN eeg-setup
+2026-11-24 15:05:49.423 | INFO | neuro_se.eeg | [EEG-RDA] connecting 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_150549\eeg
+2026-11-24 15:05:49.424 | INFO | neuro_se.eeg | [EEG-RDA] socket 100.1.1.3:51244
+2026-11-24 15:06:04.332 | ERROR | neuro_se | eeg-setup failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 179, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 181, in prepare
+    self._rda.wait_until_ready()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\rda_client.py", line 323, in wait_until_ready
+    raise TimeoutError(
+TimeoutError: RDA 100.1.1.3:51244 did not send recorder properties within 15 seconds
+2026-11-24 15:06:04.333 | INFO | neuro_se | END eeg-setup status=error
+2026-11-24 15:06:04.333 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 15:06:04.333 | INFO | neuro_se | END session
+2026-11-24 15:06:04.333 | ERROR | neuro_se | Experiment failed.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\main.py", line 52, in main
+    runner.run()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 60, in run
+    self._run_session()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 145, in _run_session
+    self._prepare_device('eeg-setup', self._eeg)
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 179, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 181, in prepare
+    self._rda.wait_until_ready()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\rda_client.py", line 323, in wait_until_ready
+    raise TimeoutError(
+TimeoutError: RDA 100.1.1.3:51244 did not send recorder properties within 15 seconds
+2026-11-24 15:06:04.371 | INFO | neuro_se.eeg | [EEG-RDA] socket closed
+2026-11-24 15:06:04.424 | ERROR | neuro_se | eeg-setup failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 179, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 181, in prepare
+    self._rda.wait_until_ready()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\rda_client.py", line 323, in wait_until_ready
+    raise TimeoutError(
+TimeoutError: RDA 100.1.1.3:51244 did not send recorder properties within 15 seconds
+2026-11-24 15:06:04.425 | INFO | neuro_se | END eeg-setup status=error
+2026-11-24 15:06:04.426 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 15:06:04.426 | INFO | neuro_se | END session
+2026-11-24 15:06:04.426 | ERROR | neuro_se | Experiment failed.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\main.py", line 52, in main
+    runner.run()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 60, in run
+    self._run_session()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 145, in _run_session
+    self._prepare_device('eeg-setup', self._eeg)
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 179, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 181, in prepare
+    self._rda.wait_until_ready()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\rda_client.py", line 323, in wait_until_ready
+    raise TimeoutError(
+TimeoutError: RDA 100.1.1.3:51244 did not send recorder properties within 15 seconds
+2026-11-24 15:06:04.462 | INFO | neuro_se.eeg | [EEG-RDA] socket closed
+2026-11-24 15:34:47.038 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 15:34:47.038 | INFO | neuro_se | BEGIN session id=20261124_153447 eeg=live gaze=live log=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log hardware=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_153447
+2026-11-24 15:34:47.039 | INFO | neuro_se | Session 20261124_153447 starting.
+2026-11-24 15:34:47.039 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_153447\eeg
+2026-11-24 15:34:47.039 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_153447\gaze
+2026-11-24 15:34:47.039 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 15:34:47.039 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 15:34:47.040 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 15:34:47.040 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 15:34:47.040 | INFO | neuro_se | BEGIN eeg-setup
+2026-11-24 15:34:47.097 | INFO | neuro_se.eeg | [EEG-RDA] connecting 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_153447\eeg
+2026-11-24 15:34:47.099 | INFO | neuro_se.eeg | [EEG-RDA] socket 100.1.1.3:51244
+2026-11-24 15:34:50.918 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 15:34:50.918 | INFO | neuro_se | BEGIN session id=20261124_153450 eeg=live gaze=live log=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log hardware=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_153450
+2026-11-24 15:34:50.918 | INFO | neuro_se | Session 20261124_153450 starting.
+2026-11-24 15:34:50.918 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_153450\eeg
+2026-11-24 15:34:50.918 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_153450\gaze
+2026-11-24 15:34:50.918 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 15:34:50.918 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 15:34:50.919 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 15:34:50.920 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 15:34:50.920 | INFO | neuro_se | BEGIN eeg-setup
+2026-11-24 15:34:50.972 | INFO | neuro_se.eeg | [EEG-RDA] connecting 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_153450\eeg
+2026-11-24 15:34:50.973 | INFO | neuro_se.eeg | [EEG-RDA] socket 100.1.1.3:51244
+2026-11-24 15:35:05.974 | INFO | neuro_se.eeg | [EEG-RDA] stopped blocks=0 samples=0 markers=0
+2026-11-24 15:35:05.974 | INFO | neuro_se.eeg | [EEG-RDA] socket closed
+2026-11-24 15:35:05.974 | ERROR | neuro_se | eeg-setup failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 179, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 181, in prepare
+    self._rda.wait_until_ready()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\rda_client.py", line 327, in wait_until_ready
+    raise TimeoutError(
+TimeoutError: RDA 100.1.1.3:51244 did not send recorder properties within 15 seconds
+2026-11-24 15:35:05.976 | INFO | neuro_se | END eeg-setup status=error
+2026-11-24 15:35:05.976 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 15:35:05.976 | INFO | neuro_se | END session
+2026-11-24 15:35:05.976 | ERROR | neuro_se | Experiment failed.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\main.py", line 52, in main
+    runner.run()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 60, in run
+    self._run_session()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 145, in _run_session
+    self._prepare_device('eeg-setup', self._eeg)
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 179, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 181, in prepare
+    self._rda.wait_until_ready()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\rda_client.py", line 327, in wait_until_ready
+    raise TimeoutError(
+TimeoutError: RDA 100.1.1.3:51244 did not send recorder properties within 15 seconds
+2026-11-24 15:44:30.733 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 15:44:30.734 | INFO | neuro_se | BEGIN session id=20261124_154430 eeg=live gaze=live log=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log hardware=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_154430
+2026-11-24 15:44:30.734 | INFO | neuro_se | Session 20261124_154430 starting.
+2026-11-24 15:44:30.734 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_154430\eeg
+2026-11-24 15:44:30.734 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_154430\gaze
+2026-11-24 15:44:30.735 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 15:44:30.735 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 15:44:30.737 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 15:44:30.737 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 15:44:30.737 | INFO | neuro_se | BEGIN eeg-setup
+2026-11-24 15:44:30.802 | INFO | neuro_se.eeg | [EEG-RDA] connecting 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_154430\eeg
+2026-11-24 15:44:30.804 | INFO | neuro_se.eeg | [EEG-RDA] socket 100.1.1.3:51244
+2026-11-24 15:44:35.805 | INFO | neuro_se.eeg | [EEG-RDA] stopped blocks=0 samples=0 markers=0
+2026-11-24 15:44:35.805 | INFO | neuro_se.eeg | [EEG-RDA] socket closed
+2026-11-24 15:44:35.806 | ERROR | neuro_se | eeg-setup failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 181, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 195, in prepare
+    self._rda.wait_until_ready()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\rda_client.py", line 327, in wait_until_ready
+    raise TimeoutError(
+TimeoutError: RDA 100.1.1.3:51244 did not send recorder properties within 5 seconds
+2026-11-24 15:44:35.809 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 15:44:35.809 | INFO | neuro_se | END eeg-setup status=unavailable action=continue
+2026-11-24 15:44:35.809 | INFO | neuro_se | BEGIN eyelink-setup
+2026-11-24 15:44:35.885 | INFO | neuro_se.gaze | [EYELINK] pylink loaded from C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\pylink\__init__.py
+2026-11-24 15:44:35.885 | INFO | neuro_se.gaze | [EYELINK] connecting 100.1.1.1
+2026-11-24 15:44:35.885 | INFO | neuro_se.gaze | [EYELINK] session file 154430.edf on the tracker, local copy C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_154430\gaze\154430.edf
+2026-11-24 15:44:36.248 | INFO | neuro_se.gaze | [EYELINK] opening camera setup and calibration. C calibrates, V validates, Escape leaves the setup screen.
+2026-11-24 15:44:39.660 | INFO | neuro_se.gaze | [EYELINK] entering doTrackerSetup
+2026-11-24 15:47:56.700 | INFO | neuro_se.gaze | [EYELINK] doTrackerSetup complete
+2026-11-24 15:47:59.738 | INFO | neuro_se.gaze | [EYELINK] graphics closed
+2026-11-24 15:47:59.738 | INFO | neuro_se.gaze | [EYELINK] setup screens closed
+2026-11-24 15:47:59.738 | INFO | neuro_se | END eyelink-setup status=ok
+2026-11-24 15:48:10.362 | ERROR | neuro_se.ui | Failed to build the PsychoPy window.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\ui_manager.py", line 70, in __init__
+    self.win = visual.Window(
+               ^^^^^^^^^^^^^^
+TypeError: Window.__init__() got an unexpected keyword argument 'title'
+2026-11-24 15:48:10.362 | INFO | neuro_se.eeg | [EEG-UNAVAILABLE] stopped
+2026-11-24 15:48:10.363 | INFO | neuro_se.gaze | [EYELINK] connection closed
+2026-11-24 15:48:10.363 | INFO | neuro_se | END session
+2026-11-24 15:48:10.363 | ERROR | neuro_se | Experiment failed.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\main.py", line 74, in main
+    runner.run()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 60, in run
+    self._run_session()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 150, in _run_session
+    self.ui_manager = UIManager(self._config, self._logger)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\ui_manager.py", line 70, in __init__
+    self.win = visual.Window(
+               ^^^^^^^^^^^^^^
+TypeError: Window.__init__() got an unexpected keyword argument 'title'
+2026-11-24 15:50:31.492 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 15:50:31.493 | INFO | neuro_se | BEGIN session id=20261124_155031 eeg=live gaze=live log=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log hardware=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_155031
+2026-11-24 15:50:31.493 | INFO | neuro_se | Session 20261124_155031 starting.
+2026-11-24 15:50:31.493 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_155031\eeg
+2026-11-24 15:50:31.493 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_155031\gaze
+2026-11-24 15:50:31.493 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 15:50:31.493 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 15:50:31.494 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 15:50:31.495 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 15:50:31.495 | INFO | neuro_se | BEGIN eeg-setup
+2026-11-24 15:50:31.555 | INFO | neuro_se.eeg | [EEG-RDA] connecting 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_155031\eeg
+2026-11-24 15:50:31.556 | INFO | neuro_se.eeg | [EEG-RDA] socket 100.1.1.3:51244
+2026-11-24 15:50:36.556 | INFO | neuro_se.eeg | [EEG-RDA] stopped blocks=0 samples=0 markers=0
+2026-11-24 15:50:36.556 | INFO | neuro_se.eeg | [EEG-RDA] socket closed
+2026-11-24 15:50:36.557 | ERROR | neuro_se | eeg-setup failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 181, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 195, in prepare
+    self._rda.wait_until_ready()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\rda_client.py", line 327, in wait_until_ready
+    raise TimeoutError(
+TimeoutError: RDA 100.1.1.3:51244 did not send recorder properties within 5 seconds
+2026-11-24 15:50:36.558 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 15:50:36.558 | INFO | neuro_se | END eeg-setup status=unavailable action=continue
+2026-11-24 15:50:36.558 | INFO | neuro_se | BEGIN eyelink-setup
+2026-11-24 15:50:36.607 | INFO | neuro_se.gaze | [EYELINK] pylink loaded from C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\pylink\__init__.py
+2026-11-24 15:50:36.607 | INFO | neuro_se.gaze | [EYELINK] connecting 100.1.1.1
+2026-11-24 15:50:36.607 | INFO | neuro_se.gaze | [EYELINK] session file 155031.edf on the tracker, local copy C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_155031\gaze\155031.edf
+2026-11-24 15:50:36.700 | INFO | neuro_se.gaze | [EYELINK] opening camera setup and calibration. C calibrates, V validates, Escape leaves the setup screen.
+2026-11-24 15:50:39.836 | INFO | neuro_se.gaze | [EYELINK] entering doTrackerSetup
+2026-11-24 15:54:12.740 | INFO | neuro_se.gaze | [EYELINK] doTrackerSetup complete
+2026-11-24 15:54:15.779 | INFO | neuro_se.gaze | [EYELINK] graphics closed
+2026-11-24 15:54:15.779 | INFO | neuro_se.gaze | [EYELINK] setup screens closed
+2026-11-24 15:54:15.780 | INFO | neuro_se | END eyelink-setup status=ok
+2026-11-24 15:54:18.367 | ERROR | neuro_se.ui | Failed to build the PsychoPy window.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\ui_manager.py", line 70, in __init__
+    self.win = visual.Window(
+               ^^^^^^^^^^^^^^
+TypeError: Window.__init__() got an unexpected keyword argument 'title'
+2026-11-24 15:54:18.367 | INFO | neuro_se.eeg | [EEG-UNAVAILABLE] stopped
+2026-11-24 15:54:18.368 | INFO | neuro_se.gaze | [EYELINK] connection closed
+2026-11-24 15:54:18.368 | INFO | neuro_se | END session
+2026-11-24 15:54:18.368 | ERROR | neuro_se | Experiment failed.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\main.py", line 74, in main
+    runner.run()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 60, in run
+    self._run_session()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 150, in _run_session
+    self.ui_manager = UIManager(self._config, self._logger)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\ui_manager.py", line 70, in __init__
+    self.win = visual.Window(
+               ^^^^^^^^^^^^^^
+TypeError: Window.__init__() got an unexpected keyword argument 'title'
+2026-11-24 16:00:50.657 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 16:00:50.657 | INFO | neuro_se | BEGIN session id=20261124_160050 eeg=live gaze=live log=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log hardware=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_160050
+2026-11-24 16:00:50.657 | INFO | neuro_se | Session 20261124_160050 starting.
+2026-11-24 16:00:50.657 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_160050\eeg
+2026-11-24 16:00:50.657 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_160050\gaze
+2026-11-24 16:00:50.657 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 16:00:50.658 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 16:00:50.658 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:00:50.659 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:00:50.659 | INFO | neuro_se | BEGIN eeg-setup
+2026-11-24 16:00:50.722 | INFO | neuro_se.eeg | [EEG-RDA] connecting 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_160050\eeg
+2026-11-24 16:00:50.723 | INFO | neuro_se.eeg | [EEG-RDA] socket 100.1.1.3:51244
+2026-11-24 16:00:55.724 | INFO | neuro_se.eeg | [EEG-RDA] stopped blocks=0 samples=0 markers=0
+2026-11-24 16:00:55.724 | INFO | neuro_se.eeg | [EEG-RDA] socket closed
+2026-11-24 16:00:55.725 | ERROR | neuro_se | eeg-setup failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 181, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 199, in prepare
+    self._rda.wait_until_ready()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\rda_client.py", line 327, in wait_until_ready
+    raise TimeoutError(
+TimeoutError: RDA 100.1.1.3:51244 did not send recorder properties within 5 seconds
+2026-11-24 16:00:55.726 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 16:00:55.726 | INFO | neuro_se | END eeg-setup status=unavailable action=continue
+2026-11-24 16:00:55.726 | INFO | neuro_se | BEGIN eyelink-setup
+2026-11-24 16:00:55.775 | INFO | neuro_se.gaze | [EYELINK] pylink loaded from C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\pylink\__init__.py
+2026-11-24 16:00:55.775 | INFO | neuro_se.gaze | [EYELINK] connecting 100.1.1.1
+2026-11-24 16:00:55.775 | INFO | neuro_se.gaze | [EYELINK] session file 160050.edf on the tracker, local copy C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_160050\gaze\160050.edf
+2026-11-24 16:00:55.863 | INFO | neuro_se.gaze | [EYELINK] opening camera setup and calibration. C calibrates, V validates, Escape leaves the setup screen.
+2026-11-24 16:00:59.021 | INFO | neuro_se.gaze | [EYELINK] entering doTrackerSetup
+2026-11-24 16:01:46.394 | INFO | neuro_se.gaze | [EYELINK] doTrackerSetup complete
+2026-11-24 16:01:49.449 | INFO | neuro_se.gaze | [EYELINK] graphics closed
+2026-11-24 16:01:49.449 | INFO | neuro_se.gaze | [EYELINK] setup screens closed
+2026-11-24 16:01:49.449 | INFO | neuro_se | END eyelink-setup status=ok
+2026-11-24 16:01:55.502 | INFO | neuro_se.ui | Window ready ((1280, 740), fullscreen=False).
+2026-11-24 16:01:55.502 | INFO | neuro_se | BEGIN project-window
+2026-11-24 16:01:58.297 | INFO | neuro_se | Operator started session 20261124_160050 (mono).
+2026-11-24 16:01:58.297 | INFO | neuro_se | BEGIN recording
+2026-11-24 16:01:58.297 | WARNING | neuro_se.eeg | [EEG-UNAVAILABLE] recording skipped
+2026-11-24 16:01:58.298 | INFO | neuro_se.gaze | [EYELINK] openDataFile 160050.edf
+2026-11-24 16:01:58.376 | INFO | neuro_se.gaze | [EYELINK] recording file, link, events and samples
+2026-11-24 16:01:58.379 | INFO | neuro_se.lsl | LSL marker pushed: experiment_start
+2026-11-24 16:01:58.380 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:01:58.380 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:01:58.380 | INFO | neuro_se | Trial 1/13: s1_01_easy_human_bug_nolabel
+2026-11-24 16:01:58.426 | INFO | neuro_se.ui | Showing numbered text (3 lines, mono).
+2026-11-24 16:01:58.464 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_01_easy_human_bug_nolabel_human_written
+2026-11-24 16:02:03.504 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:05.990 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:05.991 | INFO | neuro_se.data | Saved trial s1_01_easy_human_bug_nolabel (20261124_160050): hits=1 false_alarms=0 misses=0 duration=7.526s
+2026-11-24 16:02:05.992 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:05.993 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:05.993 | INFO | neuro_se | Trial 2/13: s1_02_easy_human_bug_label
+2026-11-24 16:02:06.027 | INFO | neuro_se.ui | Showing image s1_02_easy_human_bug_label.png
+2026-11-24 16:02:06.057 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_02_easy_human_bug_label_ai_generated
+2026-11-24 16:02:08.393 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:09.344 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:09.347 | INFO | neuro_se.data | Saved trial s1_02_easy_human_bug_label (20261124_160050): hits=1 false_alarms=0 misses=0 duration=3.288s
+2026-11-24 16:02:09.348 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:09.348 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:09.348 | INFO | neuro_se | Trial 3/13: s1_03_easy_ai_bug_nolabel
+2026-11-24 16:02:09.365 | INFO | neuro_se.ui | Showing image s1_03_easy_ai_bug_nolabel.png
+2026-11-24 16:02:09.393 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_03_easy_ai_bug_nolabel_ai_generated
+2026-11-24 16:02:11.112 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:11.697 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:11.698 | INFO | neuro_se.data | Saved trial s1_03_easy_ai_bug_nolabel (20261124_160050): hits=1 false_alarms=0 misses=1 duration=2.303s
+2026-11-24 16:02:11.699 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:11.699 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:11.699 | INFO | neuro_se | Trial 4/13: s1_04_easy_ai_bug_label
+2026-11-24 16:02:11.708 | INFO | neuro_se.ui | Showing image s1_04_easy_ai_bug_label.png
+2026-11-24 16:02:11.729 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_04_easy_ai_bug_label_ai_generated
+2026-11-24 16:02:12.731 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:12.931 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:12.932 | INFO | neuro_se.data | Saved trial s1_04_easy_ai_bug_label (20261124_160050): hits=0 false_alarms=1 misses=1 duration=1.202s
+2026-11-24 16:02:12.933 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:12.933 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:12.933 | INFO | neuro_se | Trial 5/13: s1_05_hard_human_bug_nolabel
+2026-11-24 16:02:12.948 | INFO | neuro_se.ui | Showing image s1_05_hard_human_bug_nolabel.png
+2026-11-24 16:02:12.964 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_05_hard_human_bug_nolabel_human_written
+2026-11-24 16:02:13.481 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:14.366 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:14.367 | INFO | neuro_se.data | Saved trial s1_05_hard_human_bug_nolabel (20261124_160050): hits=0 false_alarms=1 misses=1 duration=1.401s
+2026-11-24 16:02:14.367 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:14.368 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:14.368 | INFO | neuro_se | Trial 6/13: s1_06_hard_human_bug_label_mismatch
+2026-11-24 16:02:14.383 | INFO | neuro_se.ui | Showing image s1_06_hard_human_bug_label_mismatch.png
+2026-11-24 16:02:14.399 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_06_hard_human_bug_label_mismatch_human_written
+2026-11-24 16:02:15.317 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:19.220 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:19.755 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:19.756 | INFO | neuro_se.data | Saved trial s1_06_hard_human_bug_label_mismatch (20261124_160050): hits=0 false_alarms=1 misses=2 duration=5.356s
+2026-11-24 16:02:19.756 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:19.757 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:19.757 | INFO | neuro_se | Trial 7/13: s1_07_hard_ai_bug_nolabel
+2026-11-24 16:02:19.792 | INFO | neuro_se.ui | Showing numbered text (25 lines, mono).
+2026-11-24 16:02:19.820 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_07_hard_ai_bug_nolabel_ai_generated
+2026-11-24 16:02:22.623 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:22.723 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:23.141 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:23.142 | INFO | neuro_se.data | Saved trial s1_07_hard_ai_bug_nolabel (20261124_160050): hits=0 false_alarms=1 misses=2 duration=3.321s
+2026-11-24 16:02:23.143 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:23.143 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:23.143 | INFO | neuro_se | Trial 8/13: s1_08_hard_ai_bug_label_mismatch
+2026-11-24 16:02:23.156 | INFO | neuro_se.ui | Showing image s1_08_hard_ai_bug_label_mismatch.png
+2026-11-24 16:02:23.174 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_08_hard_ai_bug_label_mismatch_ai_generated
+2026-11-24 16:02:26.378 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:26.544 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:26.945 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:26.946 | INFO | neuro_se.data | Saved trial s1_08_hard_ai_bug_label_mismatch (20261124_160050): hits=0 false_alarms=1 misses=2 duration=3.771s
+2026-11-24 16:02:26.947 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:26.947 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:26.947 | INFO | neuro_se | Trial 9/13: s1_09_control_human_clean_label
+2026-11-24 16:02:26.957 | INFO | neuro_se.ui | Showing image s1_09_control_human_clean_label.png
+2026-11-24 16:02:26.978 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_09_control_human_clean_label_human_written
+2026-11-24 16:02:29.147 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:29.314 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:29.315 | INFO | neuro_se.data | Saved trial s1_09_control_human_clean_label (20261124_160050): hits=0 false_alarms=1 misses=0 duration=2.336s
+2026-11-24 16:02:29.316 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:29.316 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:29.316 | INFO | neuro_se | Trial 10/13: s1_10_control_ai_clean_nolabel
+2026-11-24 16:02:29.326 | INFO | neuro_se.ui | Showing image s1_10_control_ai_clean_nolabel.png
+2026-11-24 16:02:29.347 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_10_control_ai_clean_nolabel_ai_generated
+2026-11-24 16:02:30.732 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:31.984 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:31.984 | INFO | neuro_se.data | Saved trial s1_10_control_ai_clean_nolabel (20261124_160050): hits=0 false_alarms=1 misses=0 duration=2.637s
+2026-11-24 16:02:31.985 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:31.986 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:31.986 | INFO | neuro_se | Trial 11/13: task_01
+2026-11-24 16:02:31.996 | INFO | neuro_se.ui | Showing numbered text (2 lines, mono).
+2026-11-24 16:02:32.014 | INFO | neuro_se.lsl | LSL marker pushed: task_start_task_01_human_written
+2026-11-24 16:02:35.619 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:36.020 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:36.021 | INFO | neuro_se.data | Saved trial task_01 (20261124_160050): hits=0 false_alarms=1 misses=1 duration=4.006s
+2026-11-24 16:02:36.021 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:36.022 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:36.022 | INFO | neuro_se | Trial 12/13: task_02
+2026-11-24 16:02:36.027 | INFO | neuro_se.ui | Showing numbered text (2 lines, mono).
+2026-11-24 16:02:36.052 | INFO | neuro_se.lsl | LSL marker pushed: task_start_task_02_human_written
+2026-11-24 16:02:36.770 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:36.987 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:36.988 | INFO | neuro_se.data | Saved trial task_02 (20261124_160050): hits=0 false_alarms=1 misses=1 duration=0.936s
+2026-11-24 16:02:36.989 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:36.989 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:36.989 | INFO | neuro_se | Trial 13/13: task_03
+2026-11-24 16:02:37.001 | INFO | neuro_se.ui | Showing numbered text (2 lines, mono).
+2026-11-24 16:02:37.036 | INFO | neuro_se.lsl | LSL marker pushed: task_start_task_03_human_written
+2026-11-24 16:02:37.855 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:02:38.172 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:02:38.173 | INFO | neuro_se.data | Saved trial task_03 (20261124_160050): hits=0 false_alarms=1 misses=1 duration=1.136s
+2026-11-24 16:02:38.174 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:02:38.174 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:02:38.174 | INFO | neuro_se | Session 20261124_160050 complete.
+2026-11-24 16:02:38.174 | INFO | neuro_se | END recording
+2026-11-24 16:02:38.174 | INFO | neuro_se.eeg | [EEG-UNAVAILABLE] stopped
+2026-11-24 16:02:42.289 | INFO | neuro_se.gaze | [EYELINK] received 900244 bytes, saved C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_160050\gaze\160050.edf (900244 bytes)
+2026-11-24 16:02:42.289 | INFO | neuro_se.gaze | [EYELINK] connection closed
+2026-11-24 16:02:42.289 | INFO | neuro_se.lsl | LSL marker pushed: experiment_end
+2026-11-24 16:02:42.304 | INFO | neuro_se.ui | PsychoPy window closed.
+2026-11-24 16:02:42.304 | INFO | neuro_se | END project-window
+2026-11-24 16:02:42.304 | INFO | neuro_se | END session
+2026-11-24 16:16:10.609 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 16:16:10.609 | INFO | neuro_se | BEGIN session id=20261124_161610 eeg=live gaze=live log=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log hardware=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161610
+2026-11-24 16:16:10.610 | INFO | neuro_se | Session 20261124_161610 starting.
+2026-11-24 16:16:10.610 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161610\eeg
+2026-11-24 16:16:10.610 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161610\gaze
+2026-11-24 16:16:10.610 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 16:16:10.610 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 16:16:10.611 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:16:10.611 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:16:10.611 | INFO | neuro_se | BEGIN eeg-setup
+2026-11-24 16:16:10.667 | INFO | neuro_se.eeg | [EEG-RDA] connecting 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161610\eeg
+2026-11-24 16:16:10.668 | INFO | neuro_se.eeg | [EEG-RDA] socket 100.1.1.3:51244
+2026-11-24 16:16:10.669 | INFO | neuro_se.eeg | [EEG-RDA] connected
+2026-11-24 16:16:10.746 | INFO | neuro_se.eeg | [EEG-RDA] recorder: 1000.000 Hz, 63 channels: Fp1, Fz, F3, F7, FT9, FC5, FC1, C3, T7, TP9, CP5, CP1, Pz, P3, P7, O1, Oz, O2, P4, P8, TP10, CP6, CP2, C4, T8, FT10, FC6, FC2, F4, F8, Fp2, AF7, AF3, AFz, F1, F5, FT7, FC3, C1, C5, TP7, CP3, P1, P5, PO7, PO3, POz, PO4, PO8, P6, P2, CPz, CP4, TP8, C6, C2, FC4, FT8, F6, AF8, AF4, F2, Iz
+2026-11-24 16:16:10.746 | INFO | neuro_se.eeg | [EEG-RDA] files: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161610\eeg\datablocks.csv | C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161610\eeg\properties.json | C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161610\eeg\markers.csv
+2026-11-24 16:16:10.746 | INFO | neuro_se.eeg | [EEG-RDA] setup complete
+2026-11-24 16:16:10.747 | INFO | neuro_se | END eeg-setup status=ok
+2026-11-24 16:16:10.747 | INFO | neuro_se | BEGIN eyelink-setup
+2026-11-24 16:16:10.798 | INFO | neuro_se.gaze | [EYELINK] pylink loaded from C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\pylink\__init__.py
+2026-11-24 16:16:10.798 | INFO | neuro_se.gaze | [EYELINK] connecting 100.1.1.1
+2026-11-24 16:16:10.798 | INFO | neuro_se.gaze | [EYELINK] session file 161610.edf on the tracker, local copy C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161610\gaze\161610.edf
+2026-11-24 16:16:10.883 | INFO | neuro_se.gaze | [EYELINK] opening camera setup and calibration. C calibrates, V validates, Escape leaves the setup screen.
+2026-11-24 16:16:17.026 | ERROR | neuro_se | eyelink-setup failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 181, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 344, in prepare
+    pylink.openGraphics()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\pylink\eyelink.py", line 1052, in openGraphics
+    return pylinkcg.openGraphics(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Could not initialize  graphics
+2026-11-24 16:16:17.052 | INFO | neuro_se.gaze | [EYELINK] connection closed
+2026-11-24 16:16:17.053 | INFO | neuro_se | END eyelink-setup status=unavailable action=continue
+2026-11-24 16:16:22.768 | INFO | neuro_se.ui | Window ready ((1280, 740), fullscreen=False).
+2026-11-24 16:16:22.768 | INFO | neuro_se | BEGIN project-window
+2026-11-24 16:16:37.499 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 16:16:37.499 | INFO | neuro_se | BEGIN session id=20261124_161637 eeg=live gaze=live log=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log hardware=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161637
+2026-11-24 16:16:37.499 | INFO | neuro_se | Session 20261124_161637 starting.
+2026-11-24 16:16:37.499 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161637\eeg
+2026-11-24 16:16:37.499 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161637\gaze
+2026-11-24 16:16:37.501 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 16:16:37.501 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 16:16:37.501 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:16:37.501 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:16:37.501 | INFO | neuro_se | BEGIN eeg-setup
+2026-11-24 16:16:37.558 | INFO | neuro_se.eeg | [EEG-RDA] connecting 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161637\eeg
+2026-11-24 16:16:37.559 | INFO | neuro_se.eeg | [EEG-RDA] socket 100.1.1.3:51244
+2026-11-24 16:16:37.561 | INFO | neuro_se.eeg | [EEG-RDA] connected
+2026-11-24 16:16:37.630 | INFO | neuro_se.eeg | [EEG-RDA] recorder: 1000.000 Hz, 63 channels: Fp1, Fz, F3, F7, FT9, FC5, FC1, C3, T7, TP9, CP5, CP1, Pz, P3, P7, O1, Oz, O2, P4, P8, TP10, CP6, CP2, C4, T8, FT10, FC6, FC2, F4, F8, Fp2, AF7, AF3, AFz, F1, F5, FT7, FC3, C1, C5, TP7, CP3, P1, P5, PO7, PO3, POz, PO4, PO8, P6, P2, CPz, CP4, TP8, C6, C2, FC4, FT8, F6, AF8, AF4, F2, Iz
+2026-11-24 16:16:37.630 | INFO | neuro_se.eeg | [EEG-RDA] files: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161637\eeg\datablocks.csv | C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161637\eeg\properties.json | C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161637\eeg\markers.csv
+2026-11-24 16:16:37.631 | INFO | neuro_se.eeg | [EEG-RDA] setup complete
+2026-11-24 16:16:37.631 | INFO | neuro_se | END eeg-setup status=ok
+2026-11-24 16:16:37.631 | INFO | neuro_se | BEGIN eyelink-setup
+2026-11-24 16:16:37.684 | INFO | neuro_se.gaze | [EYELINK] pylink loaded from C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\pylink\__init__.py
+2026-11-24 16:16:37.685 | INFO | neuro_se.gaze | [EYELINK] connecting 100.1.1.1
+2026-11-24 16:16:37.685 | INFO | neuro_se.gaze | [EYELINK] session file 161637.edf on the tracker, local copy C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_161637\gaze\161637.edf
+2026-11-24 16:16:37.765 | INFO | neuro_se.gaze | [EYELINK] opening camera setup and calibration. C calibrates, V validates, Escape leaves the setup screen.
+2026-11-24 16:16:43.901 | ERROR | neuro_se | eyelink-setup failed
+Traceback (most recent call last):
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\src\experiment.py", line 181, in _prepare_device
+    device.prepare()
+  File "C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\hardware\devices.py", line 344, in prepare
+    pylink.openGraphics()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\pylink\eyelink.py", line 1052, in openGraphics
+    return pylinkcg.openGraphics(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Could not initialize  graphics
+2026-11-24 16:16:43.908 | INFO | neuro_se.gaze | [EYELINK] connection closed
+2026-11-24 16:16:43.908 | INFO | neuro_se | END eyelink-setup status=unavailable action=continue
+2026-11-24 16:16:49.545 | INFO | neuro_se.ui | Window ready ((1280, 740), fullscreen=False).
+2026-11-24 16:16:49.545 | INFO | neuro_se | BEGIN project-window
+2026-11-24 16:16:51.614 | INFO | neuro_se | Operator started session 20261124_161637 (mono).
+2026-11-24 16:16:51.614 | INFO | neuro_se | BEGIN recording
+2026-11-24 16:16:51.615 | INFO | neuro_se.eeg | [EEG-RDA] recording enabled
+2026-11-24 16:16:51.615 | WARNING | neuro_se.gaze | [EYELINK-UNAVAILABLE] recording skipped
+2026-11-24 16:16:51.615 | INFO | neuro_se.lsl | LSL marker pushed: experiment_start
+2026-11-24 16:16:51.616 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:16:51.616 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:16:51.616 | INFO | neuro_se | Trial 1/13: s1_01_easy_human_bug_nolabel
+2026-11-24 16:16:51.641 | INFO | neuro_se.eeg | [EEG-RDA] blocks=1 samples=20 markers=0
+2026-11-24 16:16:51.644 | INFO | neuro_se.ui | Showing numbered text (3 lines, mono).
+2026-11-24 16:16:51.672 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_01_easy_human_bug_nolabel_human_written
+2026-11-24 16:16:52.410 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:52.632 | INFO | neuro_se.eeg | [EEG-RDA] blocks=50 samples=1000 markers=0
+2026-11-24 16:16:52.675 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:52.825 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:53.008 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:53.634 | INFO | neuro_se.eeg | [EEG-RDA] blocks=100 samples=2000 markers=0
+2026-11-24 16:16:54.344 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:54.543 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:54.605 | INFO | neuro_se.eeg | [EEG-RDA] blocks=150 samples=3000 markers=0
+2026-11-24 16:16:55.511 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:55.603 | INFO | neuro_se.eeg | [EEG-RDA] blocks=200 samples=4000 markers=0
+2026-11-24 16:16:55.828 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:16:55.829 | INFO | neuro_se.data | Saved trial s1_01_easy_human_bug_nolabel (20261124_161637): hits=0 false_alarms=1 misses=1 duration=4.156s
+2026-11-24 16:16:55.830 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:16:55.831 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:16:55.831 | INFO | neuro_se | Trial 2/13: s1_02_easy_human_bug_label
+2026-11-24 16:16:55.859 | INFO | neuro_se.ui | Showing image s1_02_easy_human_bug_label.png
+2026-11-24 16:16:55.878 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_02_easy_human_bug_label_ai_generated
+2026-11-24 16:16:56.673 | INFO | neuro_se.eeg | [EEG-RDA] blocks=250 samples=5000 markers=0
+2026-11-24 16:16:56.779 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:56.981 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:16:56.982 | INFO | neuro_se.data | Saved trial s1_02_easy_human_bug_label (20261124_161637): hits=0 false_alarms=1 misses=1 duration=1.104s
+2026-11-24 16:16:56.984 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:16:56.984 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:16:56.984 | INFO | neuro_se | Trial 3/13: s1_03_easy_ai_bug_nolabel
+2026-11-24 16:16:56.999 | INFO | neuro_se.ui | Showing image s1_03_easy_ai_bug_nolabel.png
+2026-11-24 16:16:57.029 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_03_easy_ai_bug_nolabel_ai_generated
+2026-11-24 16:16:57.514 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:57.630 | INFO | neuro_se.eeg | [EEG-RDA] blocks=300 samples=6000 markers=0
+2026-11-24 16:16:57.731 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:16:57.732 | INFO | neuro_se.data | Saved trial s1_03_easy_ai_bug_nolabel (20261124_161637): hits=0 false_alarms=1 misses=2 duration=0.702s
+2026-11-24 16:16:57.733 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:16:57.733 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:16:57.733 | INFO | neuro_se | Trial 4/13: s1_04_easy_ai_bug_label
+2026-11-24 16:16:57.741 | INFO | neuro_se.ui | Showing image s1_04_easy_ai_bug_label.png
+2026-11-24 16:16:57.764 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_04_easy_ai_bug_label_ai_generated
+2026-11-24 16:16:58.048 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:58.281 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:16:58.283 | INFO | neuro_se.data | Saved trial s1_04_easy_ai_bug_label (20261124_161637): hits=0 false_alarms=1 misses=1 duration=0.518s
+2026-11-24 16:16:58.284 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:16:58.284 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:16:58.284 | INFO | neuro_se | Trial 5/13: s1_05_hard_human_bug_nolabel
+2026-11-24 16:16:58.298 | INFO | neuro_se.ui | Showing image s1_05_hard_human_bug_nolabel.png
+2026-11-24 16:16:58.331 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_05_hard_human_bug_nolabel_human_written
+2026-11-24 16:16:58.609 | INFO | neuro_se.eeg | [EEG-RDA] blocks=350 samples=7000 markers=0
+2026-11-24 16:16:58.665 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:58.899 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:16:58.900 | INFO | neuro_se.data | Saved trial s1_05_hard_human_bug_nolabel (20261124_161637): hits=0 false_alarms=1 misses=1 duration=0.568s
+2026-11-24 16:16:58.902 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:16:58.902 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:16:58.902 | INFO | neuro_se | Trial 6/13: s1_06_hard_human_bug_label_mismatch
+2026-11-24 16:16:58.919 | INFO | neuro_se.ui | Showing image s1_06_hard_human_bug_label_mismatch.png
+2026-11-24 16:16:58.948 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_06_hard_human_bug_label_mismatch_human_written
+2026-11-24 16:16:59.065 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:59.249 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:16:59.250 | INFO | neuro_se.data | Saved trial s1_06_hard_human_bug_label_mismatch (20261124_161637): hits=0 false_alarms=1 misses=2 duration=0.301s
+2026-11-24 16:16:59.251 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:16:59.251 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:16:59.251 | INFO | neuro_se | Trial 7/13: s1_07_hard_ai_bug_nolabel
+2026-11-24 16:16:59.280 | INFO | neuro_se.ui | Showing numbered text (25 lines, mono).
+2026-11-24 16:16:59.297 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_07_hard_ai_bug_nolabel_ai_generated
+2026-11-24 16:16:59.465 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:16:59.619 | INFO | neuro_se.eeg | [EEG-RDA] blocks=400 samples=8000 markers=0
+2026-11-24 16:16:59.649 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:16:59.650 | INFO | neuro_se.data | Saved trial s1_07_hard_ai_bug_nolabel (20261124_161637): hits=0 false_alarms=1 misses=2 duration=0.351s
+2026-11-24 16:16:59.651 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:16:59.651 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:16:59.651 | INFO | neuro_se | Trial 8/13: s1_08_hard_ai_bug_label_mismatch
+2026-11-24 16:16:59.671 | INFO | neuro_se.ui | Showing image s1_08_hard_ai_bug_label_mismatch.png
+2026-11-24 16:16:59.699 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_08_hard_ai_bug_label_mismatch_ai_generated
+2026-11-24 16:16:59.866 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:17:00.017 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:17:00.017 | INFO | neuro_se.data | Saved trial s1_08_hard_ai_bug_label_mismatch (20261124_161637): hits=0 false_alarms=1 misses=2 duration=0.318s
+2026-11-24 16:17:00.018 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:17:00.019 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:17:00.019 | INFO | neuro_se | Trial 9/13: s1_09_control_human_clean_label
+2026-11-24 16:17:00.029 | INFO | neuro_se.ui | Showing image s1_09_control_human_clean_label.png
+2026-11-24 16:17:00.049 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_09_control_human_clean_label_human_written
+2026-11-24 16:17:00.216 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:17:00.350 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:17:00.351 | INFO | neuro_se.data | Saved trial s1_09_control_human_clean_label (20261124_161637): hits=0 false_alarms=1 misses=0 duration=0.301s
+2026-11-24 16:17:00.351 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:17:00.352 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:17:00.352 | INFO | neuro_se | Trial 10/13: s1_10_control_ai_clean_nolabel
+2026-11-24 16:17:00.365 | INFO | neuro_se.ui | Showing image s1_10_control_ai_clean_nolabel.png
+2026-11-24 16:17:00.399 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_10_control_ai_clean_nolabel_ai_generated
+2026-11-24 16:17:00.533 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:17:00.602 | INFO | neuro_se.eeg | [EEG-RDA] blocks=450 samples=9000 markers=0
+2026-11-24 16:17:00.650 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:17:00.651 | INFO | neuro_se.data | Saved trial s1_10_control_ai_clean_nolabel (20261124_161637): hits=0 false_alarms=1 misses=0 duration=0.251s
+2026-11-24 16:17:00.652 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:17:00.652 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:17:00.652 | INFO | neuro_se | Trial 11/13: task_01
+2026-11-24 16:17:00.664 | INFO | neuro_se.ui | Showing numbered text (2 lines, mono).
+2026-11-24 16:17:00.681 | INFO | neuro_se.lsl | LSL marker pushed: task_start_task_01_human_written
+2026-11-24 16:17:01.066 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:17:01.167 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:17:01.167 | INFO | neuro_se.data | Saved trial task_01 (20261124_161637): hits=1 false_alarms=0 misses=0 duration=0.485s
+2026-11-24 16:17:01.170 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:17:01.171 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:17:01.171 | INFO | neuro_se | Trial 12/13: task_02
+2026-11-24 16:17:01.177 | INFO | neuro_se.ui | Showing numbered text (2 lines, mono).
+2026-11-24 16:17:01.199 | INFO | neuro_se.lsl | LSL marker pushed: task_start_task_02_human_written
+2026-11-24 16:17:01.417 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:17:01.550 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:17:01.550 | INFO | neuro_se.data | Saved trial task_02 (20261124_161637): hits=1 false_alarms=0 misses=0 duration=0.351s
+2026-11-24 16:17:01.551 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:17:01.551 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:17:01.551 | INFO | neuro_se | Trial 13/13: task_03
+2026-11-24 16:17:01.561 | INFO | neuro_se.ui | Showing numbered text (2 lines, mono).
+2026-11-24 16:17:01.582 | INFO | neuro_se.lsl | LSL marker pushed: task_start_task_03_human_written
+2026-11-24 16:17:01.617 | INFO | neuro_se.eeg | [EEG-RDA] blocks=500 samples=10000 markers=0
+2026-11-24 16:17:02.616 | INFO | neuro_se.eeg | [EEG-RDA] blocks=550 samples=11000 markers=0
+2026-11-24 16:17:02.901 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:17:03.152 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:17:03.152 | INFO | neuro_se.data | Saved trial task_03 (20261124_161637): hits=1 false_alarms=0 misses=0 duration=1.570s
+2026-11-24 16:17:03.153 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:17:03.153 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:17:03.154 | INFO | neuro_se | Session 20261124_161637 complete.
+2026-11-24 16:17:03.154 | INFO | neuro_se | END recording
+2026-11-24 16:17:03.155 | INFO | neuro_se.eeg | [EEG-RDA] stopped blocks=576 samples=11520 markers=0
+2026-11-24 16:17:03.155 | INFO | neuro_se.eeg | [EEG-RDA] socket closed
+2026-11-24 16:17:03.155 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 16:17:03.155 | INFO | neuro_se.gaze | [EYELINK-UNAVAILABLE] stopped
+2026-11-24 16:17:03.156 | INFO | neuro_se.lsl | LSL marker pushed: experiment_end
+2026-11-24 16:17:03.179 | INFO | neuro_se.ui | PsychoPy window closed.
+2026-11-24 16:17:03.180 | INFO | neuro_se | END project-window
+2026-11-24 16:17:03.180 | INFO | neuro_se | END session
+2026-11-24 16:22:16.574 | INFO | neuro_se.lsl | LSL outlet ready: NeuroSE_Markers
+2026-11-24 16:22:16.574 | INFO | neuro_se | BEGIN session id=20261124_162216 eeg=live gaze=live log=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log hardware=C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_162216
+2026-11-24 16:22:16.574 | INFO | neuro_se | Session 20261124_162216 starting.
+2026-11-24 16:22:16.574 | INFO | neuro_se | EEG: RDA 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_162216\eeg
+2026-11-24 16:22:16.575 | INFO | neuro_se | Gaze: EyeLink 100.1.1.1 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_162216\gaze
+2026-11-24 16:22:16.575 | INFO | neuro_se | Журнал: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\experiment.log
+2026-11-24 16:22:16.575 | INFO | neuro_se | Ответы: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\trials.csv
+2026-11-24 16:22:16.576 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:22:16.576 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:22:16.576 | INFO | neuro_se | BEGIN eeg-setup
+2026-11-24 16:22:16.634 | INFO | neuro_se.eeg | [EEG-RDA] connecting 100.1.1.3:51244 -> C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_162216\eeg
+2026-11-24 16:22:16.635 | INFO | neuro_se.eeg | [EEG-RDA] socket 100.1.1.3:51244
+2026-11-24 16:22:16.637 | INFO | neuro_se.eeg | [EEG-RDA] connected
+2026-11-24 16:22:16.670 | INFO | neuro_se.eeg | [EEG-RDA] recorder: 1000.000 Hz, 63 channels: Fp1, Fz, F3, F7, FT9, FC5, FC1, C3, T7, TP9, CP5, CP1, Pz, P3, P7, O1, Oz, O2, P4, P8, TP10, CP6, CP2, C4, T8, FT10, FC6, FC2, F4, F8, Fp2, AF7, AF3, AFz, F1, F5, FT7, FC3, C1, C5, TP7, CP3, P1, P5, PO7, PO3, POz, PO4, PO8, P6, P2, CPz, CP4, TP8, C6, C2, FC4, FT8, F6, AF8, AF4, F2, Iz
+2026-11-24 16:22:16.670 | INFO | neuro_se.eeg | [EEG-RDA] files: C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_162216\eeg\datablocks.csv | C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_162216\eeg\properties.json | C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_162216\eeg\markers.csv
+2026-11-24 16:22:16.670 | INFO | neuro_se.eeg | [EEG-RDA] setup complete
+2026-11-24 16:22:16.671 | INFO | neuro_se | END eeg-setup status=ok
+2026-11-24 16:22:16.671 | INFO | neuro_se | BEGIN eyelink-setup
+2026-11-24 16:22:16.723 | INFO | neuro_se.gaze | [EYELINK] pylink loaded from C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\pylink\__init__.py
+2026-11-24 16:22:16.723 | INFO | neuro_se.gaze | [EYELINK] connecting 100.1.1.1
+2026-11-24 16:22:16.723 | INFO | neuro_se.gaze | [EYELINK] session file 162216.edf on the tracker, local copy C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_162216\gaze\162216.edf
+2026-11-24 16:22:16.805 | INFO | neuro_se.gaze | [EYELINK] opening camera setup and calibration. C calibrates, V validates, Escape leaves the setup screen.
+2026-11-24 16:22:16.805 | INFO | neuro_se.gaze | [EYELINK] opening calibration graphics size=1280x740 depth=32
+2026-11-24 16:22:17.233 | INFO | neuro_se.gaze | [EYELINK] entering doTrackerSetup
+2026-11-24 16:24:19.308 | INFO | neuro_se.gaze | [EYELINK] doTrackerSetup complete
+2026-11-24 16:24:19.613 | INFO | neuro_se.gaze | [EYELINK] graphics closed
+2026-11-24 16:24:19.613 | INFO | neuro_se.gaze | [EYELINK] setup screens closed
+2026-11-24 16:24:19.614 | INFO | neuro_se | END eyelink-setup status=ok
+2026-11-24 16:24:25.452 | INFO | neuro_se.ui | Window ready ((1280, 740), fullscreen=False).
+2026-11-24 16:24:25.452 | INFO | neuro_se | BEGIN project-window
+2026-11-24 16:24:26.517 | INFO | neuro_se | Operator started session 20261124_162216 (mono).
+2026-11-24 16:24:26.517 | INFO | neuro_se | BEGIN recording
+2026-11-24 16:24:26.517 | INFO | neuro_se.eeg | [EEG-RDA] recording enabled
+2026-11-24 16:24:26.518 | INFO | neuro_se.gaze | [EYELINK] openDataFile 162216.edf
+2026-11-24 16:24:26.638 | INFO | neuro_se.gaze | [EYELINK] recording file, link, events and samples
+2026-11-24 16:24:26.638 | INFO | neuro_se.lsl | LSL marker pushed: experiment_start
+2026-11-24 16:24:26.640 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:26.641 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:26.641 | INFO | neuro_se | Trial 1/13: s1_01_easy_human_bug_nolabel
+2026-11-24 16:24:26.645 | INFO | neuro_se.eeg | [EEG-RDA] blocks=1 samples=20 markers=0
+2026-11-24 16:24:26.687 | INFO | neuro_se.ui | Showing numbered text (3 lines, mono).
+2026-11-24 16:24:26.728 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_01_easy_human_bug_nolabel_human_written
+2026-11-24 16:24:27.528 | INFO | neuro_se.eeg | [EEG-RDA] blocks=50 samples=1000 markers=0
+2026-11-24 16:24:28.558 | INFO | neuro_se.eeg | [EEG-RDA] blocks=100 samples=2000 markers=0
+2026-11-24 16:24:29.543 | INFO | neuro_se.eeg | [EEG-RDA] blocks=150 samples=3000 markers=0
+2026-11-24 16:24:30.543 | INFO | neuro_se.eeg | [EEG-RDA] blocks=200 samples=4000 markers=0
+2026-11-24 16:24:31.538 | INFO | neuro_se.eeg | [EEG-RDA] blocks=250 samples=5000 markers=0
+2026-11-24 16:24:32.532 | INFO | neuro_se.eeg | [EEG-RDA] blocks=300 samples=6000 markers=0
+2026-11-24 16:24:33.546 | INFO | neuro_se.eeg | [EEG-RDA] blocks=350 samples=7000 markers=0
+2026-11-24 16:24:34.530 | INFO | neuro_se.eeg | [EEG-RDA] blocks=400 samples=8000 markers=0
+2026-11-24 16:24:35.548 | INFO | neuro_se.eeg | [EEG-RDA] blocks=450 samples=9000 markers=0
+2026-11-24 16:24:36.440 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:36.548 | INFO | neuro_se.eeg | [EEG-RDA] blocks=500 samples=10000 markers=0
+2026-11-24 16:24:37.549 | INFO | neuro_se.eeg | [EEG-RDA] blocks=550 samples=11000 markers=0
+2026-11-24 16:24:37.841 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:37.842 | INFO | neuro_se.data | Saved trial s1_01_easy_human_bug_nolabel (20261124_162216): hits=1 false_alarms=0 misses=0 duration=11.113s
+2026-11-24 16:24:37.843 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:37.843 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:37.843 | INFO | neuro_se | Trial 2/13: s1_02_easy_human_bug_label
+2026-11-24 16:24:37.874 | INFO | neuro_se.ui | Showing image s1_02_easy_human_bug_label.png
+2026-11-24 16:24:37.908 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_02_easy_human_bug_label_ai_generated
+2026-11-24 16:24:38.292 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:38.527 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:38.528 | INFO | neuro_se.data | Saved trial s1_02_easy_human_bug_label (20261124_162216): hits=0 false_alarms=1 misses=1 duration=0.619s
+2026-11-24 16:24:38.530 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:38.530 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:38.531 | INFO | neuro_se | Trial 3/13: s1_03_easy_ai_bug_nolabel
+2026-11-24 16:24:38.533 | INFO | neuro_se.eeg | [EEG-RDA] blocks=600 samples=12000 markers=0
+2026-11-24 16:24:38.547 | INFO | neuro_se.ui | Showing image s1_03_easy_ai_bug_nolabel.png
+2026-11-24 16:24:38.575 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_03_easy_ai_bug_nolabel_ai_generated
+2026-11-24 16:24:38.876 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:39.127 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:39.127 | INFO | neuro_se.data | Saved trial s1_03_easy_ai_bug_nolabel (20261124_162216): hits=0 false_alarms=1 misses=2 duration=0.552s
+2026-11-24 16:24:39.128 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:39.129 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:39.129 | INFO | neuro_se | Trial 4/13: s1_04_easy_ai_bug_label
+2026-11-24 16:24:39.144 | INFO | neuro_se.ui | Showing image s1_04_easy_ai_bug_label.png
+2026-11-24 16:24:39.176 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_04_easy_ai_bug_label_ai_generated
+2026-11-24 16:24:39.527 | INFO | neuro_se.eeg | [EEG-RDA] blocks=650 samples=13000 markers=0
+2026-11-24 16:24:39.594 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:39.794 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:39.795 | INFO | neuro_se.data | Saved trial s1_04_easy_ai_bug_label (20261124_162216): hits=0 false_alarms=1 misses=1 duration=0.618s
+2026-11-24 16:24:39.796 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:39.796 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:39.796 | INFO | neuro_se | Trial 5/13: s1_05_hard_human_bug_nolabel
+2026-11-24 16:24:39.812 | INFO | neuro_se.ui | Showing image s1_05_hard_human_bug_nolabel.png
+2026-11-24 16:24:39.843 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_05_hard_human_bug_nolabel_human_written
+2026-11-24 16:24:40.127 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:40.294 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:40.296 | INFO | neuro_se.data | Saved trial s1_05_hard_human_bug_nolabel (20261124_162216): hits=0 false_alarms=1 misses=1 duration=0.451s
+2026-11-24 16:24:40.297 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:40.297 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:40.298 | INFO | neuro_se | Trial 6/13: s1_06_hard_human_bug_label_mismatch
+2026-11-24 16:24:40.315 | INFO | neuro_se.ui | Showing image s1_06_hard_human_bug_label_mismatch.png
+2026-11-24 16:24:40.345 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_06_hard_human_bug_label_mismatch_human_written
+2026-11-24 16:24:40.528 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:40.551 | INFO | neuro_se.eeg | [EEG-RDA] blocks=700 samples=14000 markers=0
+2026-11-24 16:24:40.645 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:40.646 | INFO | neuro_se.data | Saved trial s1_06_hard_human_bug_label_mismatch (20261124_162216): hits=0 false_alarms=1 misses=2 duration=0.301s
+2026-11-24 16:24:40.647 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:40.647 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:40.648 | INFO | neuro_se | Trial 7/13: s1_07_hard_ai_bug_nolabel
+2026-11-24 16:24:40.676 | INFO | neuro_se.ui | Showing numbered text (25 lines, mono).
+2026-11-24 16:24:40.693 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_07_hard_ai_bug_nolabel_ai_generated
+2026-11-24 16:24:40.895 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:41.095 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:41.096 | INFO | neuro_se.data | Saved trial s1_07_hard_ai_bug_nolabel (20261124_162216): hits=0 false_alarms=1 misses=2 duration=0.402s
+2026-11-24 16:24:41.097 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:41.097 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:41.097 | INFO | neuro_se | Trial 8/13: s1_08_hard_ai_bug_label_mismatch
+2026-11-24 16:24:41.111 | INFO | neuro_se.ui | Showing image s1_08_hard_ai_bug_label_mismatch.png
+2026-11-24 16:24:41.128 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_08_hard_ai_bug_label_mismatch_ai_generated
+2026-11-24 16:24:41.329 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:41.512 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:41.513 | INFO | neuro_se.data | Saved trial s1_08_hard_ai_bug_label_mismatch (20261124_162216): hits=0 false_alarms=1 misses=2 duration=0.384s
+2026-11-24 16:24:41.514 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:41.514 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:41.514 | INFO | neuro_se | Trial 9/13: s1_09_control_human_clean_label
+2026-11-24 16:24:41.524 | INFO | neuro_se.ui | Showing image s1_09_control_human_clean_label.png
+2026-11-24 16:24:41.546 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_09_control_human_clean_label_human_written
+2026-11-24 16:24:41.585 | INFO | neuro_se.eeg | [EEG-RDA] blocks=750 samples=15000 markers=0
+2026-11-24 16:24:41.845 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:41.979 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:41.980 | INFO | neuro_se.data | Saved trial s1_09_control_human_clean_label (20261124_162216): hits=0 false_alarms=1 misses=0 duration=0.434s
+2026-11-24 16:24:41.981 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:41.981 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:41.981 | INFO | neuro_se | Trial 10/13: s1_10_control_ai_clean_nolabel
+2026-11-24 16:24:41.994 | INFO | neuro_se.ui | Showing image s1_10_control_ai_clean_nolabel.png
+2026-11-24 16:24:42.012 | INFO | neuro_se.lsl | LSL marker pushed: task_start_s1_10_control_ai_clean_nolabel_ai_generated
+2026-11-24 16:24:42.296 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:42.431 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:42.432 | INFO | neuro_se.data | Saved trial s1_10_control_ai_clean_nolabel (20261124_162216): hits=0 false_alarms=1 misses=0 duration=0.419s
+2026-11-24 16:24:42.433 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:42.434 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:42.434 | INFO | neuro_se | Trial 11/13: task_01
+2026-11-24 16:24:42.449 | INFO | neuro_se.ui | Showing numbered text (2 lines, mono).
+2026-11-24 16:24:42.478 | INFO | neuro_se.lsl | LSL marker pushed: task_start_task_01_human_written
+2026-11-24 16:24:42.538 | INFO | neuro_se.eeg | [EEG-RDA] blocks=800 samples=16000 markers=0
+2026-11-24 16:24:43.013 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:43.230 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:43.230 | INFO | neuro_se.data | Saved trial task_01 (20261124_162216): hits=1 false_alarms=0 misses=0 duration=0.752s
+2026-11-24 16:24:43.231 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:43.232 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:43.232 | INFO | neuro_se | Trial 12/13: task_02
+2026-11-24 16:24:43.237 | INFO | neuro_se.ui | Showing numbered text (2 lines, mono).
+2026-11-24 16:24:43.262 | INFO | neuro_se.lsl | LSL marker pushed: task_start_task_02_human_written
+2026-11-24 16:24:43.533 | INFO | neuro_se.eeg | [EEG-RDA] blocks=850 samples=17000 markers=0
+2026-11-24 16:24:43.580 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:43.747 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:43.748 | INFO | neuro_se.data | Saved trial task_02 (20261124_162216): hits=1 false_alarms=0 misses=0 duration=0.485s
+2026-11-24 16:24:43.749 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:43.749 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:43.749 | INFO | neuro_se | Trial 13/13: task_03
+2026-11-24 16:24:43.759 | INFO | neuro_se.ui | Showing numbered text (2 lines, mono).
+2026-11-24 16:24:43.779 | INFO | neuro_se.lsl | LSL marker pushed: task_start_task_03_human_written
+2026-11-24 16:24:44.534 | INFO | neuro_se.eeg | [EEG-RDA] blocks=900 samples=18000 markers=0
+2026-11-24 16:24:44.748 | DEBUG | neuro_se.lsl | LSL marker pushed: user_keystroke
+2026-11-24 16:24:44.981 | INFO | neuro_se.lsl | LSL marker pushed: task_end
+2026-11-24 16:24:44.982 | INFO | neuro_se.data | Saved trial task_03 (20261124_162216): hits=1 false_alarms=0 misses=0 duration=1.203s
+2026-11-24 16:24:44.983 | WARNING | neuro_se.data | Task s1_07_hard_ai_bug_nolabel has 25 lines. The screen limit is 16, and there is no scrolling.
+2026-11-24 16:24:44.983 | INFO | neuro_se.data | Loaded 13 task(s) from C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\assets\tasks.json (bugs=11, labels=8, mismatched_labels=3, images=8).
+2026-11-24 16:24:44.983 | INFO | neuro_se | Session 20261124_162216 complete.
+2026-11-24 16:24:44.983 | INFO | neuro_se | END recording
+2026-11-24 16:24:44.985 | INFO | neuro_se.eeg | [EEG-RDA] stopped blocks=922 samples=18440 markers=0
+2026-11-24 16:24:44.985 | INFO | neuro_se.eeg | [EEG-RDA] socket closed
+2026-11-24 16:24:44.985 | INFO | neuro_se.eeg | [EEG-RDA] stopped
+2026-11-24 16:24:47.529 | INFO | neuro_se.gaze | [EYELINK] received 396009 bytes, saved C:\Users\Admin\Documents\EEG-AI-EXPERIMENTS\neuro_se_experiment\data\hardware\20261124_162216\gaze\162216.edf (396009 bytes)
+2026-11-24 16:24:47.529 | INFO | neuro_se.gaze | [EYELINK] connection closed
+2026-11-24 16:24:47.529 | INFO | neuro_se.lsl | LSL marker pushed: experiment_end
+2026-11-24 16:24:47.541 | INFO | neuro_se.ui | PsychoPy window closed.
+2026-11-24 16:24:47.541 | INFO | neuro_se | END project-window
+2026-11-24 16:24:47.541 | INFO | neuro_se | END session
