@@ -7,24 +7,24 @@
 ## Что поставить
 
 1. [Git for Windows](https://git-scm.com/download/win).
-2. Python 3.12 ставит сам `start.bat`: это 3.12.10, последний выпуск 3.12 с установщиком Windows. PsychoPy на 3.13 не ставится.
+2. Python 3.11 ставит сам `start.bat`. На Windows нужен именно 3.11: у зависимости PsychoPy `pywinhook` есть готовая сборка только для неё, на 3.12 установка обрывается.
 3. Для живого айтрекера — SR Research EyeLink Developers Kit. Пакета `pylink` в pip нет.
 4. Сеть стенда уже такая: усилитель `100.1.1.3`, порт `51244` (RDA, 32-bit), трекер `100.1.1.1`.
 
 Проверка интерпретатора:
 
 ```bat
-py -3.12 --version
+py -3.11 --version
 ```
 
-Должно быть `Python 3.12.x`.
+Должно быть `Python 3.11.x`.
 
 ## Окружение
 
 ```bat
 git clone https://github.com/Fllarpell/EEG-AI-EXPERIMENTS.git
 cd EEG-AI-EXPERIMENTS\neuro_se_experiment
-py -3.12 -m venv .venv
+py -3.11 -m venv .venv
 .venv\Scripts\activate
 python -m pip install -U pip
 pip install -r requirements.txt

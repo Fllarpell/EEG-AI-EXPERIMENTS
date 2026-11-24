@@ -1,4 +1,6 @@
-# PsychoPy has no build for Python 3.13. Create the venv with Python 3.12.
+# Windows needs Python 3.11: PsychoPy pulls pywinhook, and that package has a
+# binary wheel for 3.11 only. On 3.12 pip tries to compile it and fails without SWIG.
+# macOS can keep using Python 3.12. Python 3.13 has no PsychoPy build at all.
 psychopy>=2024.2.4
 pylsl>=1.16.2
 streamlit>=1.40.0
