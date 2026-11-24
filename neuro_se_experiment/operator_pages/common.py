@@ -15,7 +15,23 @@ TASKS_PATH = ROOT / "assets" / "tasks.json"
 PHOTOS_DIR = ROOT / "assets" / "code_photos"
 LOG_PATH = ROOT / "data" / "experiment.log"
 CONSOLE_LOG = ROOT / "data" / "operator_console.log"
-PYTHON = ROOT / ".venv" / "bin" / "python"
+
+
+def venv_python() -> Path:
+    """The project interpreter. Windows keeps it in Scripts, macOS in bin."""
+    names = ("python.exe", "python") if sys.platform == "win32" else ("python", "python.exe")
+    folders = ("Scripts", "bin") if sys.platform == "win32" else ("bin", "Scripts")
+    for folder in folders:
+        for name in names:
+            candidate = ROOT / ".venv" / folder / name
+            if candidate.is_file():
+                return candidate
+    folder = "Scripts" if sys.platform == "win32" else "bin"
+    name = "python.exe" if sys.platform == "win32" else "python"
+    return ROOT / ".venv" / folder / name
+
+
+PYTHON = venv_python()
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
 LABELS = {
     "human_written": "Написано человеком",
@@ -154,7 +170,9 @@ def launch(
     use_lsl: bool,
     fullscreen: bool,
 ) -> subprocess.Popen[bytes]:
-    python = PYTHON if PYTHON.is_file() else Path(sys.executable)
+    python = venv_python()
+    if not python.is_file():
+        python = Path(sys.executable)
     command = [
         str(python),
         "-u",

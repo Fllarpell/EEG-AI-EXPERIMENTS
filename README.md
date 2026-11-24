@@ -44,7 +44,17 @@ python -c "import pylink"
 
 ## Запуск
 
-Пульт оператора:
+В папке `neuro_se_experiment` запустите `start.bat`. Он создаёт окружение, ставит библиотеки, открывает пульт http://localhost:8765 и окно заданий с заглушками. Пробел начинает сессию.
+
+Живые приборы, из командной строки в этой же папке:
+
+```bat
+start.bat live
+```
+
+Сначала откроются экраны камеры и калибровки EyeLink, затем окно заданий. Для `pylink` нужен EyeLink Developers Kit в этом же `.venv`.
+
+Пульт отдельно:
 
 ```bat
 .venv\Scripts\streamlit run operator_app.py --server.port 8765

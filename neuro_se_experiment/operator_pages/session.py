@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import subprocess
+import sys
 from typing import Optional
 
 import streamlit as st
@@ -85,23 +86,29 @@ def main() -> None:
             "Заглушку айтрекера выключить до открытия окна: сначала появятся экраны камеры и калибровки, затем задания."
         )
         st.markdown("**Скрипты**")
-        st.code(
-            "\n".join(
-                [
-                    "cd neuro_se_experiment",
-                    ".venv/bin/streamlit run operator_app.py --server.port 8765",
-                    ".venv/bin/python main.py",
-                    ".venv/bin/python main.py --no-dummy-eeg --no-dummy-gaze",
-                    ".venv/bin/python hardware/rda_client.py",
-                ]
-            ),
-            language="bash",
-        )
-        st.caption(
-            "Пульт — вторая команда. Сессия с заглушками — третья. "
-            "Живые ЭЭГ и айтрекер — четвёртая: те же вызовы, что RDA_threaded.py и Main.py "
-            "в EEG-Experiment-Script. Пятая команда пишет только усилитель в текущую папку."
-        )
+        if sys.platform == "win32":
+            st.code("start.bat\nstart.bat live", language="bat")
+            st.caption(
+                "Первая команда открывает пульт и окно заданий с заглушками. "
+                "Вторая подключает усилитель 100.1.1.3:51244 и EyeLink 100.1.1.1."
+            )
+        else:
+            st.code(
+                "\n".join(
+                    [
+                        "cd neuro_se_experiment",
+                        ".venv/bin/streamlit run operator_app.py --server.port 8765",
+                        ".venv/bin/python main.py",
+                        ".venv/bin/python main.py --no-dummy-eeg --no-dummy-gaze",
+                        ".venv/bin/python hardware/rda_client.py",
+                    ]
+                ),
+                language="bash",
+            )
+            st.caption(
+                "Пульт — вторая команда. Сессия с заглушками — третья. "
+                "Живые ЭЭГ и айтрекер — четвёртая. Пятая пишет только усилитель в текущую папку."
+            )
         st.markdown("**Последняя запись**")
         st.code(latest_recording(), language="text")
 
