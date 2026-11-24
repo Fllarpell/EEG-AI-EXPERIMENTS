@@ -1,0 +1,210 @@
+[
+  {
+    "task_id": "s1_01_easy_human_bug_nolabel",
+    "set_id": "set_1",
+    "origin": "human_written",
+    "difficulty": "easy",
+    "language": "python",
+    "show_label": false,
+    "label_text": "",
+    "has_bug": true,
+    "bug_lines": [
+      2
+    ],
+    "stimulus_type": "text",
+    "image_path": "assets/stimuli/s1_01_easy_human_bug_nolabel.png",
+    "code_text": "def apply_discount(price, percent):\n    rebate = percent\n    return price - rebate"
+  },
+  {
+    "task_id": "s1_02_easy_human_bug_label",
+    "set_id": "set_1",
+    "origin": "ai_generated",
+    "difficulty": "easy",
+    "language": "python",
+    "show_label": true,
+    "label_text": "Написано человеком",
+    "has_bug": true,
+    "bug_lines": [
+      2
+    ],
+    "stimulus_type": "image",
+    "image_path": "assets/stimuli/s1_02_easy_human_bug_label.png",
+    "code_text": "def is_even(number):\n    if number % 2 == 1:\n        return True\n    return False"
+  },
+  {
+    "task_id": "s1_03_easy_ai_bug_nolabel",
+    "set_id": "set_1",
+    "origin": "ai_generated",
+    "difficulty": "easy",
+    "language": "python",
+    "show_label": false,
+    "label_text": "",
+    "has_bug": true,
+    "bug_lines": [
+      3,
+      5
+    ],
+    "stimulus_type": "image",
+    "image_path": "assets/stimuli/s1_03_easy_ai_bug_nolabel.png",
+    "code_text": "def clamp(value, low, high):\n    if value < low:\n        return high\n    if value > high:\n        return low\n    return value"
+  },
+  {
+    "task_id": "s1_04_easy_ai_bug_label",
+    "set_id": "set_1",
+    "origin": "ai_generated",
+    "difficulty": "easy",
+    "language": "python",
+    "show_label": true,
+    "label_text": "Сгенерировано ИИ",
+    "has_bug": true,
+    "bug_lines": [
+      5
+    ],
+    "stimulus_type": "image",
+    "image_path": "assets/stimuli/s1_04_easy_ai_bug_label.png",
+    "code_text": "def average(nums):\n    total = 0\n    for n in nums:\n        total += n\n    return total / (len(nums) - 1)"
+  },
+  {
+    "task_id": "s1_05_hard_human_bug_nolabel",
+    "set_id": "set_1",
+    "origin": "human_written",
+    "difficulty": "hard",
+    "language": "python",
+    "show_label": false,
+    "label_text": "",
+    "has_bug": true,
+    "bug_lines": [
+      5
+    ],
+    "stimulus_type": "image",
+    "image_path": "assets/stimuli/s1_05_hard_human_bug_nolabel.png",
+    "code_text": "def first_duplicate(items):\n    seen = set()\n    for item in items:\n        if item in seen:\n            return None\n        seen.add(item)\n    return None"
+  },
+  {
+    "task_id": "s1_06_hard_human_bug_label_mismatch",
+    "set_id": "set_1",
+    "origin": "human_written",
+    "difficulty": "hard",
+    "language": "python",
+    "show_label": true,
+    "label_text": "Сгенерировано ИИ",
+    "has_bug": true,
+    "bug_lines": [
+      4,
+      5
+    ],
+    "stimulus_type": "image",
+    "image_path": "assets/stimuli/s1_06_hard_human_bug_label_mismatch.png",
+    "code_text": "def moving_sum(values, window):\n    totals = []\n    for i in range(len(values)):\n        start = i - window\n        chunk = values[start:i]\n        totals.append(sum(chunk))\n    return totals"
+  },
+  {
+    "task_id": "s1_07_hard_ai_bug_nolabel",
+    "set_id": "set_1",
+    "origin": "ai_generated",
+    "difficulty": "hard",
+    "language": "python",
+    "show_label": false,
+    "label_text": "",
+    "has_bug": true,
+    "bug_lines": [
+      9,
+      11
+    ],
+    "stimulus_type": "text",
+    "image_path": "assets/stimuli/s1_07_hard_ai_bug_nolabel.png",
+    "code_text": "def binary_search(nums, target):\n    lo = 0\n    hi = len(nums)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if nums[mid] == target:\n            return mid\n        if nums[mid] < target:\n            hi = mid\n        else:\n            lo = mid + 1\n    return -1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1"
+  },
+  {
+    "task_id": "s1_08_hard_ai_bug_label_mismatch",
+    "set_id": "set_1",
+    "origin": "ai_generated",
+    "difficulty": "hard",
+    "language": "python",
+    "show_label": true,
+    "label_text": "Написано человеком",
+    "has_bug": true,
+    "bug_lines": [
+      5,
+      8
+    ],
+    "stimulus_type": "image",
+    "image_path": "assets/stimuli/s1_08_hard_ai_bug_label_mismatch.png",
+    "code_text": "class Counter:\n    def __init__(self):\n        self.total = 0\n\n    def add(self, values=[]):\n        for value in values:\n            self.total += value\n        values.clear()\n        return self.total"
+  },
+  {
+    "task_id": "s1_09_control_human_clean_label",
+    "set_id": "set_1",
+    "origin": "human_written",
+    "difficulty": "control",
+    "language": "python",
+    "show_label": true,
+    "label_text": "Написано человеком",
+    "has_bug": false,
+    "bug_lines": [],
+    "stimulus_type": "image",
+    "image_path": "assets/stimuli/s1_09_control_human_clean_label.png",
+    "code_text": "def full_name(first, last):\n    left = first.strip()\n    right = last.strip()\n    return left + \" \" + right"
+  },
+  {
+    "task_id": "s1_10_control_ai_clean_nolabel",
+    "set_id": "set_1",
+    "origin": "ai_generated",
+    "difficulty": "control",
+    "language": "python",
+    "show_label": false,
+    "label_text": "",
+    "has_bug": false,
+    "bug_lines": [],
+    "stimulus_type": "image",
+    "image_path": "assets/stimuli/s1_10_control_ai_clean_nolabel.png",
+    "code_text": "def clamp_unit(value):\n    if value < 0:\n        return 0.0\n    if value > 1:\n        return 1.0\n    return value"
+  },
+  {
+    "task_id": "task_01",
+    "set_id": "set_1",
+    "origin": "human_written",
+    "difficulty": "easy",
+    "language": "python",
+    "show_label": true,
+    "label_text": "Написано человеком",
+    "has_bug": true,
+    "bug_lines": [
+      1
+    ],
+    "stimulus_type": "text",
+    "image_path": "",
+    "code_text": "def example():\n    return 0\n"
+  },
+  {
+    "task_id": "task_02",
+    "set_id": "set_1",
+    "origin": "human_written",
+    "difficulty": "easy",
+    "language": "python",
+    "show_label": true,
+    "label_text": "Написано человеком",
+    "has_bug": true,
+    "bug_lines": [
+      1
+    ],
+    "stimulus_type": "text",
+    "image_path": "",
+    "code_text": "def example():\n    return 0\n"
+  },
+  {
+    "task_id": "task_03",
+    "set_id": "set_1",
+    "origin": "human_written",
+    "difficulty": "easy",
+    "language": "python",
+    "show_label": true,
+    "label_text": "Написано человеком",
+    "has_bug": true,
+    "bug_lines": [
+      1
+    ],
+    "stimulus_type": "text",
+    "image_path": "",
+    "code_text": "def example():\n    return 0\n"
+  }
+]

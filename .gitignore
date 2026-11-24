@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.DS_Store
+neuro_se_experiment/data/*
+!neuro_se_experiment/data/.gitkeep
+*.log
+EEG-Experiment-Script/

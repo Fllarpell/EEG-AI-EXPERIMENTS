@@ -1,0 +1,5 @@
+# PsychoPy has no build for Python 3.13. Create the venv with Python 3.12.
+psychopy>=2024.2.4
+pylsl>=1.16.2
+streamlit>=1.40.0
+aiofiles>=24.1.0
