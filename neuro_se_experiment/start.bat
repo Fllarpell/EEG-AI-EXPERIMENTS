@@ -5,13 +5,13 @@ cd /d "%~dp0"
 rem Windows PsychoPy depends on pywinhook, which publishes a binary wheel for
 rem Python 3.11 only. Python 3.12 tries to compile it and stops without SWIG.
 call :find_python
-if not defined PYEXE call :install_python
-if not defined PYEXE call :find_python
 if not defined PYEXE (
-  echo Python 3.11 was not installed. Install Python 3.11.9 from https://www.python.org/downloads/release/python-3119/
+  echo Could not find the Python 3.11 that is already installed.
+  echo In this window run: py -0p
   pause
   exit /b 1
 )
+echo Using the installed Python 3.11: %PYEXE%
 
 set "REMAKE="
 if exist ".venv\Scripts\python.exe" (
@@ -59,22 +59,29 @@ exit /b 0
 set "PYEXE="
 for /f "delims=" %%I in ('py -3.11 -c "import sys; print(sys.executable)" 2^>nul') do set "PYEXE=%%I"
 if defined PYEXE exit /b 0
+call :from_reg "HKCU\Software\Python\PythonCore\3.11\InstallPath"
+if defined PYEXE exit /b 0
+call :from_reg "HKLM\Software\Python\PythonCore\3.11\InstallPath"
+if defined PYEXE exit /b 0
+call :from_reg "HKCU\Software\Python\PythonCore\3.11-64\InstallPath"
+if defined PYEXE exit /b 0
+call :from_reg "HKLM\Software\Python\PythonCore\3.11-64\InstallPath"
+if defined PYEXE exit /b 0
 if exist "%LocalAppData%\Programs\Python\Python311\python.exe" set "PYEXE=%LocalAppData%\Programs\Python\Python311\python.exe"
 if not defined PYEXE if exist "%ProgramFiles%\Python311\python.exe" set "PYEXE=%ProgramFiles%\Python311\python.exe"
+if not defined PYEXE if exist "C:\Python311\python.exe" set "PYEXE=C:\Python311\python.exe"
+if defined PYEXE exit /b 0
+for /f "delims=" %%I in ('where python 2^>nul') do call :consider "%%I"
 exit /b 0
 
-:install_python
-echo Installing Python 3.11...
-where winget >nul 2>&1
-if not errorlevel 1 (
-  winget install -e --id Python.Python.3.11 --scope user --accept-package-agreements --accept-source-agreements --disable-interactivity
-  call :find_python
-  if defined PYEXE exit /b 0
+:from_reg
+for /f "skip=2 tokens=1,2*" %%A in ('reg query "%~1" /v ExecutablePath 2^>nul') do (
+  if /I "%%A"=="ExecutablePath" set "PYEXE=%%C"
 )
-echo Downloading the Python 3.11.9 installer...
-set "INSTALLER=%TEMP%\python-3.11.9-amd64.exe"
-curl.exe -L --fail -o "%INSTALLER%" https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe
-if errorlevel 1 exit /b 1
-"%INSTALLER%" /quiet InstallAllUsers=0 PrependPath=1 Include_launcher=1 Include_pip=1 Include_test=0
-if exist "%LocalAppData%\Programs\Python\Python311\python.exe" set "PYEXE=%LocalAppData%\Programs\Python\Python311\python.exe"
+exit /b 0
+
+:consider
+if defined PYEXE exit /b 0
+"%~1" -c "import sys; raise SystemExit(0 if sys.version_info[:2]==(3, 11) else 1)" >nul 2>&1 || exit /b 0
+set "PYEXE=%~1"
 exit /b 0
