@@ -7,7 +7,7 @@
 ## Что поставить
 
 1. [Git for Windows](https://git-scm.com/download/win).
-2. Python **3.12** с [python.org](https://www.python.org/downloads/). В установщике отметьте **Add python.exe to PATH**. Версия 3.13 не подойдёт: для неё нет PsychoPy.
+2. Python 3.12 ставит сам `start.bat`: это 3.12.10, последний выпуск 3.12 с установщиком Windows. PsychoPy на 3.13 не ставится.
 3. Для живого айтрекера — SR Research EyeLink Developers Kit. Пакета `pylink` в pip нет.
 4. Сеть стенда уже такая: усилитель `100.1.1.3`, порт `51244` (RDA, 32-bit), трекер `100.1.1.1`.
 
