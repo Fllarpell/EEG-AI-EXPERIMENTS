@@ -6,9 +6,11 @@ instead of the working directory.
 """
 
 import asyncio
+import concurrent.futures
 import json
 import logging
 import struct
+import sys
 import threading
 import datetime
 
@@ -194,6 +196,10 @@ class RDA:
         self.thread: threading.Thread | None = None
         self.loop: asyncio.AbstractEventLoop | None = None
         self.receiver_future: asyncio.Future | None = None
+        self._properties_ready = threading.Event()
+        self._recording = threading.Event()
+        self._receiver_done = threading.Event()
+        self._failure: BaseException | None = None
     
     async def connect(self) -> None:
         self._logger.info("[EEG-RDA] socket %s:%s", self.host_ip, self.port)
@@ -201,23 +207,27 @@ class RDA:
         self._logger.info("[EEG-RDA] connected")
     
     async def disconnect(self) -> None:
+        if self.socket_writer is None:
+            return
         self.socket_writer.close()
         await self.socket_writer.wait_closed()
+        self.socket_writer = None
     
     async def run_data_receiver(self) -> None:
         HEADER_SIZE = 24
         properties: PropertiesPayload | None = None
         keep_receiving = True
 
-        await self.connect()
-
         try:
+            await self.connect()
             async with FileWritter(self.output_dir) as file_writter:
                 while keep_receiving:
-                    header_raw: bytes = await self.socket_reader.read(HEADER_SIZE)
+                    header_raw: bytes = await self.socket_reader.readexactly(HEADER_SIZE)
                     header_payload = HeaderPayload.from_bytes(header_raw)
 
-                    data_raw: bytes = await self.socket_reader.read(header_payload.message_length - HEADER_SIZE)
+                    data_raw: bytes = await self.socket_reader.readexactly(
+                        header_payload.message_length - HEADER_SIZE
+                    )
 
                     match header_payload.message_type:
                         case 1:
@@ -236,11 +246,14 @@ class RDA:
                                 file_writter.properties_filename,
                                 file_writter.markers_filename,
                             )
+                            self._properties_ready.set()
                         case 4:
                             if properties is None:
                                 self._logger.error("[EEG-RDA] data arrived before the channel header")
                                 continue
                             data_block = DataBlock.from_bytes(data_raw, len(properties.channel_names))
+                            if not self._recording.is_set():
+                                continue
                             await file_writter.write_data_block(data_block)
                             channels = len(properties.channel_names) or 1
                             self.blocks_written += 1
@@ -274,6 +287,9 @@ class RDA:
                             )
                             continue
                 self._logger.info("[EEG-RDA] receiver finished")
+                if properties is None:
+                    self._failure = RuntimeError('RDA stopped before recorder properties arrived')
+                    self._properties_ready.set()
         except asyncio.CancelledError:
             self._logger.info(
                 "[EEG-RDA] stopped blocks=%d samples=%d markers=%d",
@@ -283,11 +299,16 @@ class RDA:
             )
             raise
         except Exception:
+            self._failure = sys.exc_info()[1]
+            self._properties_ready.set()
             self._logger.exception("[EEG-RDA] receiver failed")
             raise
         finally:
-            await self.disconnect()
-            self._logger.info("[EEG-RDA] socket closed")
+            try:
+                await self.disconnect()
+                self._logger.info("[EEG-RDA] socket closed")
+            finally:
+                self._receiver_done.set()
     
     def run_thread(self) -> None:
         def start_loop(loop: asyncio.AbstractEventLoop) -> None:
@@ -299,22 +320,48 @@ class RDA:
         self.thread.start()
 
         self.receiver_future = asyncio.run_coroutine_threadsafe(self.run_data_receiver(), self.loop)
+
+    def wait_until_ready(self, timeout: float = 5.0) -> None:
+        """Wait until recorder properties arrive, propagating setup failures."""
+        if not self._properties_ready.wait(timeout):
+            raise TimeoutError(
+                f'RDA {self.host_ip}:{self.port} did not send recorder properties '
+                f'within {timeout:.0f} seconds'
+            )
+        if self._failure is not None:
+            raise RuntimeError(
+                f'RDA setup failed for {self.host_ip}:{self.port}: {self._failure}'
+            ) from self._failure
+
+    def begin_recording(self) -> None:
+        """Retain blocks after Space, including when properties arrive later."""
+        if self._failure is not None:
+            raise RuntimeError(f'RDA receiver failed: {self._failure}') from self._failure
+        self._recording.set()
+        if self._properties_ready.is_set():
+            self._logger.info('[EEG-RDA] recording enabled')
+        else:
+            self._logger.warning(
+                '[EEG-RDA] recording armed in the background; '
+                'waiting for recorder properties and data'
+            )
     
     def stop_thread(self) -> None:
         if self.receiver_future:
             self.receiver_future.cancel()
             try:
                 self.receiver_future.result()
-            except asyncio.CancelledError:
+            except (asyncio.CancelledError, concurrent.futures.CancelledError):
                 pass
             except Exception:
                 self._logger.exception("[EEG-RDA] receiver ended with an error")
+            self._receiver_done.wait(timeout=5.0)
         
         if self.loop:
             self.loop.call_soon_threadsafe(self.loop.stop)
         
         if self.thread:
-            self.thread.join()
+            self.thread.join(timeout=5.0)
 
 
 def run_rda(host_ip: str = '100.1.1.3', port: int = 51244) -> None:

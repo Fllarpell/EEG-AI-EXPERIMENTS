@@ -8,7 +8,7 @@ from typing import Optional
 
 from core.config import ExperimentConfig
 from core.logger import setup_logger
-from hardware.devices import DeviceSession, open_eeg, open_eyetracker
+from hardware.devices import DeviceSession, UnavailableDevice, open_eeg, open_eyetracker
 from src.data_manager import DataManager, TaskPayload, TrialResult
 from src.lsl_manager import LSLManager, Marker, task_start_marker
 from src.stimulus_format import displayed_label
@@ -41,6 +41,9 @@ class ExperimentRunner:
         )
         self._started = False
         self._shutdown_done = False
+        self._session_open = False
+        self._project_window_open = False
+        self._recording_open = False
         self._line_style = config.LINE_STYLE
         self._tasks_stamp = -1.0
         self._eeg: Optional[DeviceSession] = None
@@ -68,6 +71,9 @@ class ExperimentRunner:
         if self._shutdown_done:
             return
         self._shutdown_done = True
+        if self._recording_open:
+            self._logger.info('END recording')
+            self._recording_open = False
         for device in (self._eeg, self._gaze):
             if device is None:
                 continue
@@ -81,13 +87,30 @@ class ExperimentRunner:
         except Exception:
             self._logger.exception("Failed to push the experiment_end marker.")
         finally:
-            if self.ui_manager is not None:
-                self.ui_manager.close()
+            try:
+                if self.ui_manager is not None:
+                    self.ui_manager.close()
+            finally:
+                if self._project_window_open:
+                    self._logger.info('END project-window')
+                    self._project_window_open = False
+                if self._session_open:
+                    self._logger.info('END session')
+                    self._session_open = False
 
     def _run_session(self) -> None:
         session_id = datetime.now().strftime("%Y%m%d_%H%M%S")
         data_dir = self._config.resolve_path(self._config.DATA_OUT_DIR)
         hardware_dir = data_dir / "hardware" / session_id
+        self._logger.info(
+            "BEGIN session id=%s eeg=%s gaze=%s log=%s hardware=%s",
+            session_id,
+            "dummy" if self._config.USE_DUMMY_EEG else "live",
+            "dummy" if self._config.USE_DUMMY_EYETRACKER else "live",
+            data_dir / "experiment.log",
+            hardware_dir,
+        )
+        self._session_open = True
         self._logger.info("Session %s starting.", session_id)
         self._logger.info(
             "EEG: %s -> %s",
@@ -119,11 +142,18 @@ class ExperimentRunner:
             screen_size=self._config.WINDOW_SIZE,
             logger=self._logger,
         )
-        self._gaze.prepare()
+        if not self._prepare_device('eeg-setup', self._eeg):
+            self._eeg = UnavailableDevice('EEG', self._logger.getChild('eeg'))
+        if not self._prepare_device('eyelink-setup', self._gaze):
+            self._gaze = UnavailableDevice('EYELINK', self._logger.getChild('gaze'))
         if self.ui_manager is None:
             self.ui_manager = UIManager(self._config, self._logger)
+        self._logger.info('BEGIN project-window')
+        self._project_window_open = True
         self._tasks_stamp = self._tasks_mtime()
         self._wait_for_start(session_id, len(tasks))
+        self._logger.info('BEGIN recording')
+        self._recording_open = True
         self._eeg.start()
         self._gaze.start()
         self.lsl_manager.push_marker(Marker.EXP_START.value)
@@ -144,6 +174,21 @@ class ExperimentRunner:
             self._run_trial(session_id, task, len(remaining) == 1, index, total)
             completed.append(task.task_id)
         self._logger.info("Session %s complete.", session_id)
+
+    def _prepare_device(self, phase: str, device: DeviceSession) -> bool:
+        self._logger.info('BEGIN %s', phase)
+        try:
+            device.prepare()
+        except Exception:
+            self._logger.exception('%s failed', phase)
+            try:
+                device.stop()
+            except Exception:
+                self._logger.exception('%s cleanup failed', phase)
+            self._logger.info('END %s status=unavailable action=continue', phase)
+            return False
+        self._logger.info('END %s status=ok', phase)
+        return True
 
     def _wait_for_start(self, session_id: str, task_count: int) -> None:
         from psychopy import event

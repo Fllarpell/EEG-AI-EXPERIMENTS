@@ -44,14 +44,13 @@ if errorlevel 1 (
   )
 )
 
-set "SESSION=--dummy-eeg --dummy-gaze"
-if /I "%~1"=="live" set "SESSION=--no-dummy-eeg --no-dummy-gaze"
+set "NEURO_SE_AUTOSTART=1"
+if /I "%~1"=="live" set "NEURO_SE_LIVE_DEFAULT=1"
 
 echo Operator: http://localhost:8765
 start "Neuro-SE operator" /D "%CD%" ".venv\Scripts\streamlit.exe" run operator_app.py --server.port 8765
 timeout /t 3 /nobreak >nul
 start "" http://localhost:8765
-start "Neuro-SE session" /D "%CD%" ".venv\Scripts\python.exe" -u main.py --line-style mono %SESSION% --lsl --no-fullscreen
 endlocal
 exit /b 0
 

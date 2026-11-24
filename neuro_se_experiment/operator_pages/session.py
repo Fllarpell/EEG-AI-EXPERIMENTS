@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 from typing import Optional
@@ -11,10 +12,24 @@ import streamlit as st
 from operator_pages.common import LOG_PATH, inject_css, latest_recording, launch, stop_process, tail
 
 
+@st.cache_resource
+def _autostart_session(
+    line_style: str,
+    dummy_eeg: bool,
+    dummy_gaze: bool,
+    use_lsl: bool,
+    fullscreen: bool,
+) -> subprocess.Popen[bytes]:
+    """Start at most one automatic session for the whole Streamlit server."""
+    return launch(line_style, dummy_eeg, dummy_gaze, use_lsl, fullscreen)
+
+
 def main() -> None:
     inject_css()
     if "proc" not in st.session_state:
         st.session_state.proc = None
+
+    live_default = os.environ.get('NEURO_SE_LIVE_DEFAULT') == '1'
 
     st.markdown(
         """
@@ -44,9 +59,18 @@ def main() -> None:
             key="line_style",
         )
         fullscreen = st.toggle("Полный экран", value=False, key="start_fullscreen")
-        dummy_eeg = st.toggle("Заглушка ЭЭГ", value=True, key="dummy_eeg")
-        dummy_gaze = st.toggle("Заглушка айтрекера", value=True, key="dummy_gaze")
+        dummy_eeg = st.toggle("Заглушка ЭЭГ", value=not live_default, key="dummy_eeg")
+        dummy_gaze = st.toggle("Заглушка айтрекера", value=not live_default, key="dummy_gaze")
         use_lsl = st.toggle("Маркеры и потоки LSL", value=True, key="use_lsl")
+        if (
+            os.environ.get('NEURO_SE_AUTOSTART') == '1'
+            and not st.session_state.get('autostart_done', False)
+        ):
+            st.session_state.autostart_done = True
+            st.session_state.proc = _autostart_session(
+                line_style, dummy_eeg, dummy_gaze, use_lsl, fullscreen
+            )
+            st.rerun()
         if running:
             st.success("Окно PsychoPy открыто.")
             if st.button("Остановить сессию", type="primary", use_container_width=True):

@@ -8,9 +8,11 @@ the image-reconstruction experiment.
 
 from __future__ import annotations
 
+import importlib
 import json
 import logging
 import math
+import sys
 import threading
 import time
 from pathlib import Path
@@ -24,6 +26,24 @@ EEG_SAMPLE_RATE = 250.0
 GAZE_SAMPLE_RATE = 60.0
 
 
+def _load_pylink():
+    """Load the vendor module, including from the base Python installation."""
+    try:
+        return importlib.import_module('pylink')
+    except ImportError as first_error:
+        base_site = Path(sys.base_prefix) / 'Lib' / 'site-packages'
+        if base_site.is_dir() and str(base_site) not in sys.path:
+            # pylink is installed by the EyeLink SDK into the base Python,
+            # while PsychoPy and its binary dependencies live in this
+            # project virtual environment. Keep the base installation as
+            # a fallback so it cannot shadow the venv NumPy/PsychoPy stack.
+            sys.path.append(str(base_site))
+        try:
+            return importlib.import_module('pylink')
+        except ImportError:
+            raise first_error
+
+
 class DeviceSession:
     """What the experiment loop is allowed to call."""
 
@@ -35,6 +55,20 @@ class DeviceSession:
 
     def stop(self) -> None:
         """Stop writing and close the device. A second call is safe."""
+
+
+class UnavailableDevice(DeviceSession):
+    """No-op replacement used when requested live hardware is unreachable."""
+
+    def __init__(self, label: str, logger: logging.Logger) -> None:
+        self._label = label
+        self._logger = logger
+
+    def start(self) -> None:
+        self._logger.warning("[%s-UNAVAILABLE] recording skipped", self._label)
+
+    def stop(self) -> None:
+        self._logger.info("[%s-UNAVAILABLE] stopped", self._label)
 
 
 def open_eeg(
@@ -61,7 +95,7 @@ def open_eyetracker(
 ) -> DeviceSession:
     if use_dummy:
         return DummyEyeTracker(output_dir, enable_lsl, screen_size, logger)
-    return LiveEyeLink(host, edf_name, output_dir, logger)
+    return LiveEyeLink(host, edf_name, output_dir, screen_size, logger)
 
 
 class DummyEEG(DeviceSession):
@@ -78,6 +112,9 @@ class DummyEEG(DeviceSession):
         self._stop = threading.Event()
         self._thread: Optional[threading.Thread] = None
         self._outlet: Optional[object] = None
+
+    def prepare(self) -> None:
+        self._logger.info('[EEG-DUMMY] setup skipped')
 
     def start(self) -> None:
         if self._thread is not None:
@@ -152,12 +189,30 @@ class LiveRDA(DeviceSession):
         self._logger = logger.getChild("eeg")
         self._rda: Optional[object] = None
 
-    def start(self) -> None:
+    def prepare(self) -> None:
         from hardware.rda_client import run_rda_thread
 
         self._dir.mkdir(parents=True, exist_ok=True)
         self._logger.info("[EEG-RDA] connecting %s:%s -> %s", self._host, self._port, self._dir)
         self._rda = run_rda_thread(self._host, self._port, self._dir, self._logger)
+        try:
+            self._rda.wait_until_ready()
+        except TimeoutError as exc:
+            self._logger.warning(
+                "[EEG-RDA] %s; receiver remains active in the background",
+                exc,
+            )
+        except Exception:
+            self._rda.stop_thread()
+            self._rda = None
+            raise
+        else:
+            self._logger.info('[EEG-RDA] setup complete')
+
+    def start(self) -> None:
+        if self._rda is None:
+            raise RuntimeError('RDA.prepare() was not called.')
+        self._rda.begin_recording()
 
     def stop(self) -> None:
         if self._rda is not None:
@@ -250,9 +305,17 @@ class LiveEyeLink(DeviceSession):
     written in the log; the EDF itself uses the last six digits.
     """
 
-    def __init__(self, host: str, edf_name: str, output_dir: Path, logger: logging.Logger) -> None:
+    def __init__(
+        self,
+        host: str,
+        edf_name: str,
+        output_dir: Path,
+        screen_size: Sequence[int],
+        logger: logging.Logger,
+    ) -> None:
         self._host = host
         self._dir = output_dir
+        self._screen_size = (int(screen_size[0]), int(screen_size[1]))
         self._stem = _eyelink_stem(edf_name)
         self._tracker_file = f"{self._stem}.edf"
         self._local_file = output_dir / self._tracker_file
@@ -262,12 +325,13 @@ class LiveEyeLink(DeviceSession):
 
     def prepare(self) -> None:
         try:
-            import pylink
+            pylink = _load_pylink()
         except ImportError as exc:
             raise ImportError(
                 "Живой айтрекер включён, а библиотеки pylink нет. "
                 "Нужен SR Research EyeLink Developers Kit, либо оставьте заглушку айтрекера."
             ) from exc
+        self._logger.info("[EYELINK] pylink loaded from %s", getattr(pylink, "__file__", "unknown"))
         self._logger.info("[EYELINK] connecting %s", self._host)
         self._logger.info(
             "[EYELINK] session file %s on the tracker, local copy %s",
@@ -285,11 +349,24 @@ class LiveEyeLink(DeviceSession):
         )
         for handler in logging.getLogger("neuro_se").handlers:
             handler.flush()
-        pylink.openGraphics()
+        self._logger.info(
+            "[EYELINK] opening calibration graphics size=%sx%s depth=32",
+            self._screen_size[0],
+            self._screen_size[1],
+        )
         try:
+            pylink.openGraphics(self._screen_size, 32)
+            self._logger.info('[EYELINK] entering doTrackerSetup')
+            for handler in logging.getLogger('neuro_se').handlers:
+                handler.flush()
             self._eyelink.doTrackerSetup()
+            self._logger.info('[EYELINK] doTrackerSetup complete')
         finally:
-            pylink.closeGraphics()
+            try:
+                pylink.closeGraphics()
+                self._logger.info('[EYELINK] graphics closed')
+            except Exception:
+                self._logger.exception('[EYELINK] graphics cleanup failed')
         self._logger.info("[EYELINK] setup screens closed")
 
     def start(self) -> None:
